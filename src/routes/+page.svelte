@@ -1,59 +1,125 @@
 <script>
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
+    import DarkModeSwitch from '$components/DarkModeSwitch.svelte';
+    import ChooseLanguageSwitch from '$components/ChoseLanguageSwitch.svelte';
+    import Intro from '$components/Intro.svelte';
+    import Tools from '$components/Tools.svelte';
+    import Education from '$components/Education.svelte';
+    import SecondFlyout from '$components/flyout/SecondFlyout.svelte';
+    import Year from '$components/Year.svelte';
+    import Projects from '$components/Projects.svelte';
+    import Works from '$components/Works.svelte';
+    import SummarizeText from '$components/SummarizeText.svelte';
+    
+    import translations from "$trad"; 
+    let texts; 
+    translations.subscribe(value => {
+        texts = value;
+    });
 </script>
 
-<svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
-</svelte:head>
 
-<section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
+<div class="outer">
+    <div class="inner">
+        <div class="darkmode centralize">
+            <DarkModeSwitch />
+        </div>
+        <div class="chooselang centralize">
+            <ChooseLanguageSwitch />
+        </div>
+        <div class="summarize centralize">
+            <SummarizeText />
+        </div>
+        <div class="intro">
+            <Intro />
+        </div>
+        <div class="tools">
+            <Tools />
+        </div>
+        <div class="education">
+            <Education />
+        </div>
+        <div class="splitter">
+            <div class="name">
+                <span> Luís Henrique de Almeida </span>
+            </div>
+            <div class="secondFlyout">
+                <SecondFlyout />
+            </div>
+            <Year><span class="hidden">{texts.curriculum.toUpperCase()}</span> 2024</Year>
+        </div>
+        <div class="projects">
+            <Projects />
+        </div>
+        <div class="works">
+            <Works />
+        </div>
+    </div>
+</div>
 
-		to your new<br />SvelteKit app
-	</h1>
+<style lang="scss">
+    @use "$style/_fonts.scss";
+    @use "$style/_defaults" as defaults;
+    @use "$style/_palette.scss" as palette;
+    @use "$style/_cursors.scss" as cursors;
 
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
+    @media only screen and (min-width: defaults.$mediaMinWidth) {
+        .outer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
 
-	<Counter />
-</section>
+    .inner > * {
+        margin-block: 20px;
+    }
 
-<style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
+    .centralize {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    } 
+    .chooselang {
+        margin-top: -10px;
+    }
+    .summarize {
+        margin-top: -5px;
+        margin-bottom: -10px;
+    }
 
-	h1 {
-		width: 100%;
-	}
+    .splitter {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
 
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
+        .hidden {
+            display: none;
 
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
+            @media (max-width: defaults.$mediaMaxWidth) {
+                display: block;
+            }
+        }
+
+        .name {
+            font-family: sansation;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: palette.$highlight;
+            text-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
+            font-size: 40px;
+            text-align: center;
+            user-select: none;
+
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        @media (max-width: defaults.$mediaMaxWidth) {
+            flex-direction: column;
+        }
+    }
 </style>
