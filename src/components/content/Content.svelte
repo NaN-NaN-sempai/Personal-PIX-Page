@@ -250,7 +250,7 @@
 
         .slider {
             width: 8px;
-            height: 90%;
+            height: calc(100% - 40px);
             margin-top: 15px;
 
             background: palette.$highlight;

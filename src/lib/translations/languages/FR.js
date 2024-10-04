@@ -39,6 +39,7 @@ export default {
 						"Dévoué à l'organisation",
 						"Engagé dans l'excellence et la qualité",
 						"Fluent en anglais",
+						"Permis de conduire",
 						"Notions de français",
 						"Collaboratif et efficace en travail d'équipe",
 						"Créatif et innovant dans les solutions technologiques",

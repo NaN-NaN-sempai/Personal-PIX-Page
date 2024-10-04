@@ -36,6 +36,7 @@ export default {
                         "Organized",
                         "Fluent in English",
                         "Basic French",
+						"Driver's license",
                         "Team player",
                         "Creative",
                         "Designer",

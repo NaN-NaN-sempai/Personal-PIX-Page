@@ -51,6 +51,11 @@
     onMount(() => {
         setupLocalStorage();
         
+        const params = new URLSearchParams(location.hash.substring(1));
+        if(params.get('s')){
+            summarizing = params.get('s') == "1";
+        }     
+
         dispatch();  
     });
 </script>

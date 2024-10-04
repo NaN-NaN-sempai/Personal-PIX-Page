@@ -37,6 +37,7 @@ export default {
 						"Committed to excellence and quality",
 						"Fluent in English",
 						"Basic French",
+						"Driver's license",
 						"Collaborative and efficient in teamwork",
 						"Creative and innovative in technological solutions",
 						"Proficient in JavaScript",

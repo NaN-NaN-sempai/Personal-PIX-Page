@@ -38,6 +38,7 @@ export default {
                         "Organisé",
                         "Fluent en anglais",
                         "Notions de français",
+						"Permis de conduire",
                         "Travail en équipe",
                         "Créatif",
                         "Designer",

@@ -137,7 +137,18 @@
     import { onMount } from "svelte";
     onMount(() => {
         setupLocalStorage();
-        dispatch();  
+
+        const params = new URLSearchParams(location.hash.substring(1));
+        if(params.get('lang')){
+            let paramLang = params.get('lang').toUpperCase();
+
+            if(languages.map(({name}) => name).includes(paramLang)){
+                console.warn(`Using parametrized language: ${paramLang}`);
+                selectedLanguage = paramLang;
+            }
+        }        
+
+        dispatch();
 
         summarize.subscribe(value => {
             summerizing = value;

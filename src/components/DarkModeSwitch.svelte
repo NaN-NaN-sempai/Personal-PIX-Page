@@ -61,6 +61,12 @@
         setupLocalValue();
 
         checked = !JSON.parse(localStorage.getItem("darkmode"));
+
+        const params = new URLSearchParams(location.hash.substring(1));
+        if(params.get('dm')){
+            checked = !(params.get('dm') == "1");
+        }
+        
         changeIcon(checked);
     });
 </script>
