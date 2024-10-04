@@ -31,6 +31,10 @@
                 icon="Diferentials"    
                 title={texts.intro.differential.title}
                 content={texts.intro.differential.subjects}/>
+            <Content
+                icon="Characteristics"    
+                title={texts.intro.characteristics.title}
+                content={texts.intro.characteristics.subjects}/>
         </div>
     </div>
 </div>

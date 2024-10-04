@@ -17,6 +17,7 @@ export default {
 	name: "EN",
 	level: "🗣️",
 	content: {
+		madeWith: "Made with:",
 		curriculum: "CURRICULUM",
 		contacts: "Contacts",
 
@@ -29,23 +30,31 @@ export default {
 				title: "DIFFERENTIATORS",
 				subjects: [{
 					list: true, content: [
-						"Passionate about challenges",
-						"Quick learner",
-						"Versatile and adaptable",
-						"Sincere and ethical",
-						"Dedicated to organization",
-						"Committed to excellence and quality",
+						"Driver's license",
 						"Fluent in English",
 						"Basic French",
-						"Driver's license",
-						"Collaborative and efficient in teamwork",
-						"Creative and innovative in technological solutions",
 						"Proficient in JavaScript",
 						"Strong expertise in Design",
 						"Experience with JSX scripts for Adobe applications",
 						"Experience in WEB and Mobile development",
 						"Experience in system creation",
 						"Experience in Arduino development",
+					]
+				}]
+			},
+			characteristics: {
+				title: "CARACTERÍSTICAS",
+				subjects: [{
+					list: true,
+					content: [
+						"Passionate about challenges",
+						"Quick learner",
+						"Versatile and adaptable",
+						"Sincere and ethical",
+						"Dedicated to organization",
+						"Committed to excellence and quality",
+						"Collaborative and efficient in teamwork",
+						"Creative and innovative in technological solutions",
 					]
 				}]
 			},

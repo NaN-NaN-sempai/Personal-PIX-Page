@@ -17,6 +17,7 @@ export default {
 	name: "FR",
 	level: "👶🏻",
 	content: {
+		madeWith: "Fait avec :",
 		curriculum: "CURRICULUM VITAE",
 		contacts: "Contacts",
 
@@ -32,23 +33,31 @@ export default {
 				subjects: [{
 					list: true,
 					content: [
-						"Passionné par les défis",
-						"Apprenant rapide",
-						"Polyvalent et adaptable",
-						"Sincère et éthique",
-						"Dévoué à l'organisation",
-						"Engagé dans l'excellence et la qualité",
-						"Fluent en anglais",
 						"Permis de conduire",
+						"Fluent en anglais",
 						"Notions de français",
-						"Collaboratif et efficace en travail d'équipe",
-						"Créatif et innovant dans les solutions technologiques",
 						"Compétent en JavaScript",
 						"Grande expertise en design",
 						"Expérience avec les scripts JSX pour les applications Adobe",
 						"Expérience en développement WEB et Mobile",
 						"Expérience en création de systèmes",
 						"Expérience en développement Arduino",
+					]
+				}]
+			},
+			characteristics: {
+				title: "CARACTÉRISTIQUES",
+				subjects: [{
+					list: true,
+					content: [
+						"Passionné par les défis",
+						"Apprenant rapide",
+						"Polyvalent et adaptable",
+						"Sincère et éthique",
+						"Dévoué à l'organisation",
+						"Engagé dans l'excellence et la qualité",
+						"Collaboratif et efficace en travail d'équipe",
+						"Créatif et innovant dans les solutions technologiques",
 					]
 				}]
 			},

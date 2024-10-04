@@ -17,6 +17,7 @@ export default {
     name: "EN",
     level: "🗣️",
     content: {
+        madeWith: "Made with:",
         curriculum: "CURRICULUM",
         contacts: "Contacts",
 
@@ -29,16 +30,9 @@ export default {
                 title: "DIFFERENTIATORS",
                 subjects: [{
                     list: true, content: [
-                        "Passionate about challenges",
-                        "Quick learner",
-                        "Versatile",
-                        "Sincere",
-                        "Organized",
                         "Fluent in English",
                         "Basic French",
 						"Driver's license",
-                        "Team player",
-                        "Creative",
                         "Designer",
                         "Programmer",
 						"Experience with Adobe JSX scripts",
@@ -46,6 +40,21 @@ export default {
                     ]
                 }]
             },
+			characteristics: {
+				title: "CARACTERÍSTICAS",
+				subjects: [{
+					list: true,
+					content: [
+                        "Passionate about challenges",
+                        "Quick learner",
+                        "Versatile",
+                        "Sincere",
+                        "Organized",
+                        "Team player",
+                        "Creative",
+					]
+				}]
+			},
         },
         education: {
             title: "ACADEMIC BACKGROUND",

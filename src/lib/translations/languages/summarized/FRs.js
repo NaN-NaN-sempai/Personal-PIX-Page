@@ -17,6 +17,7 @@ export default {
     name: "FR",
     level: "👶🏻",
     content: {
+        madeWith: "Fait avec :",
         curriculum: "CURRICULUM VITAE",
         contacts: "Contacts",
         intro: {
@@ -31,23 +32,31 @@ export default {
                 subjects: [{
                     list: true,
                     content: [
-                        "Passionné par les défis",
-                        "Apprenant rapide",
-                        "Polyvalent",
-                        "Sincère",
-                        "Organisé",
                         "Fluent en anglais",
                         "Notions de français",
 						"Permis de conduire",
-                        "Travail en équipe",
-                        "Créatif",
                         "Designer",
                         "Programmeur",
                         "Développement Adobe JSX",
                         "Développement WEB, Mobile et Arduino",
                     ]
                 }]
-            }
+            },
+			characteristics: {
+				title: "CARACTÉRISTIQUES",
+				subjects: [{
+					list: true,
+					content: [
+                        "Passionné par les défis",
+                        "Apprenant rapide",
+                        "Polyvalent",
+                        "Sincère",
+                        "Organisé",
+                        "Travail en équipe",
+                        "Créatif",
+					]
+				}]
+			},
         },
         education: {
             title: "PARCOURS ACADÉMIQUE",

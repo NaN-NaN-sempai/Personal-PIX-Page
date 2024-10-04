@@ -17,6 +17,7 @@ export default {
 	name: "PT",
 	level: "🗣️",
 	content: {
+		madeWith: "Feito com:",
 		curriculum: "Currículo",
 		contacts: "Contatos",
 
@@ -32,6 +33,22 @@ export default {
 				subjects: [{
 					list: true,
 					content: [
+						"Carteira de motorista",
+						"Inglês fluente",
+						"Francês básico",
+						"Exímio em JavaScript",
+						"Designer",
+						"JSX em Adobe",
+						"Desenvolvimento Web/Mobile",
+						"Arduino",
+					]
+				}]
+			},
+			characteristics: {
+				title: "CARACTERÍSTICAS",
+				subjects: [{
+					list: true,
+					content: [
 						"Aprendizado rápido",
 						"Versatilidade",
 						"Sinceridade",
@@ -39,14 +56,6 @@ export default {
 						"Qualidade",
 						"Criatividade",
 						"Trabalho em equipe",
-						"Inglês fluente",
-						"Francês básico",
-						"Carteira de motorista",
-						"Exímio em JavaScript",
-						"Designer",
-						"JSX em Adobe",
-						"Desenvolvimento Web/Mobile",
-						"Arduino",
 					]
 				}]
 			},

@@ -17,6 +17,7 @@ export default {
 	name: "PT",
 	level: "🗣️",
 	content: {
+		madeWith: "Feito com:",
 		curriculum: "Currículo",
 		contacts: "Contatos",
 
@@ -32,23 +33,31 @@ export default {
 				subjects: [{
 					list: true,
 					content: [
-						"Apaixonado por desafios",
-						"Rápida aprendizagem",
-						"Versátil e adaptável",
-						"Sincero e ético",
-						"Dedicado à organização",
-						"Comprometido com excelência e qualidade",
+						"Carteira de motorista",
 						"Fluente em inglês",
 						"Francês básico",
-						"Carteira de motorista",
-						"Colaborativo e eficiente em trabalho em equipe",
-						"Criativo e inovador em soluções tecnológicas",
 						"Exímio em JavaScript",
 						"Forte expertise em Design",
 						"Experiência em scripts JSX para aplicativos Adobe",
 						"Experiência em desenvolvimento WEB e mobile",
 						"Experiência na criação de sistemas",
 						"Experiência em desenvolvimento com Arduino",
+					]
+				}]
+			},
+			characteristics: {
+				title: "CARACTERÍSTICAS",
+				subjects: [{
+					list: true,
+					content: [
+						"Apaixonado por desafios",
+						"Rápida aprendizagem",
+						"Versátil e adaptável",
+						"Sincero e ético",
+						"Dedicado à organização",
+						"Comprometido com excelência e qualidade",
+						"Colaborativo e eficiente em trabalho em equipe",
+						"Criativo e inovador em soluções tecnológicas",
 					]
 				}]
 			},

@@ -2,6 +2,7 @@
     
     import Declaration from "$components/icons/Declaration.svelte";
     import Diferentials from "$components/icons/Diferentials.svelte";
+    import Characteristics from "$components/icons/Characteristics.svelte";
     import Education from "$components/icons/Education.svelte";
     import Email from "$components/icons/Email.svelte";
     import Github from "$components/icons/Github.svelte";
@@ -15,6 +16,7 @@
 
     let Icons = {
         Declaration,
+        Characteristics,
         Diferentials,
         Education,
         Email,
