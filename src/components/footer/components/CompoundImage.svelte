@@ -27,7 +27,7 @@
 		justify-content: center;
 		align-items: center;
 		gap: 10px;
-		padding: 5px;
+		padding: 10px;
 		border-radius: 9999px;
 		font-size: 1.2rem;
 		text-decoration: inherit;
@@ -38,7 +38,7 @@
 			text-decoration: underline;
 			background: palette.$primary;
 			color: palette.$highlight;
-			padding-right: 10px;
+			padding-right: 15px;
 		}
 
 		.image {

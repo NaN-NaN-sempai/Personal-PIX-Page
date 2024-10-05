@@ -2,8 +2,9 @@
 	export let year = new Date().getFullYear();
 	export let author = 'Luís Henrique de Almeida Gomes';
 
-	import translations from '$trad';
 	import CompoundImage from './components/CompoundImage.svelte';
+	
+	import translations from '$trad';
 	let texts;
 	translations.subscribe((value) => {
 		texts = value;
@@ -153,10 +154,12 @@
 		width: 100vw;
 		text-align: center;
 		font-size: 1.2rem;
-		background: gradients.$main;
+		background: palette.$secondary;
 
-		color: palette.$primary;
+		color: palette.$highlight;
 		overflow: hidden;
+
+		box-shadow: 0 0 30px -10px palette.$tertiary;
 
 		.content {
 			padding: 0.75rem;
@@ -164,7 +167,7 @@
 
 		hr {
 			margin-block: 30px;
-			border: 2px solid palette.$primary;
+			border: 2px solid palette.$highlight;
 			border-radius: 9999px;
 		}
 
@@ -213,7 +216,7 @@
 				position: relative;
 				width: 0.25rem;
 				height: 1rem;
-				background: palette.$primary;
+				background: palette.$tertiary;
 				border-radius: 10px;
 				margin-inline: 25px;
 			}
