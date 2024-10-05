@@ -17,8 +17,8 @@ export default {
 	name: "FR",
 	level: "👶🏻",
 	content: {
-		madeWith: "Fait avec :",
-		curriculum: "CURRICULUM VITAE",
+		madeWith: "Ce site a été fait avec :",
+		curriculum: "Curriculum Vitae",
 		contacts: "Contacts",
 
 		intro: {

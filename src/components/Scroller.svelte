@@ -89,6 +89,10 @@
             gap: $gap;
 
             animation: scroll var(--speed) linear infinite var(--direction, forwards);
+
+            &:hover {
+                animation-play-state: paused;
+            }
         }
     }
     

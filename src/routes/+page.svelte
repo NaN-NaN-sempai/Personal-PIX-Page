@@ -9,7 +9,7 @@
     import Projects from '$components/Projects.svelte';
     import Works from '$components/Works.svelte';
     import SummarizeText from '$components/SummarizeText.svelte';
-	import Footer from '$components/Footer.svelte';
+	import Footer from '$components/footer/Footer.svelte';
     
     import translations from "$trad"; 
     let texts; 

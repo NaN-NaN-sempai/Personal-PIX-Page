@@ -17,7 +17,7 @@ export default {
 	name: "PT",
 	level: "🗣️",
 	content: {
-		madeWith: "Feito com:",
+		madeWith: "Este site foi feito com:",
 		curriculum: "Currículo",
 		contacts: "Contatos",
 

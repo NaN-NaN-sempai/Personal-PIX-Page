@@ -17,8 +17,8 @@ export default {
     name: "EN",
     level: "🗣️",
     content: {
-        madeWith: "Made with:",
-        curriculum: "CURRICULUM",
+		madeWith: "This site was made with:",
+        curriculum: "Curriculum",
         contacts: "Contacts",
 
         intro: {
@@ -41,7 +41,7 @@ export default {
                 }]
             },
 			characteristics: {
-				title: "CARACTERÍSTICAS",
+				title: "CHARACTERISTICS",
 				subjects: [{
 					list: true,
 					content: [
