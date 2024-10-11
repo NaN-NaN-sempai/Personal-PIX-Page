@@ -26,7 +26,7 @@
 			},
 			{
 				text: texts.curriculum,
-				href: 'https://' + domain + +'/curriculo'
+				href: 'https://' + domain + '/curriculo'
 			},
 			{
 				text: year,
