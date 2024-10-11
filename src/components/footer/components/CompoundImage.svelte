@@ -54,7 +54,8 @@
             overflow: hidden;
 
 			img {
-				width: var(--containerSize);
+				max-width:100%;
+				max-height:100%;
 			}
 		}
 

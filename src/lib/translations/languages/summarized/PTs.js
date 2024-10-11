@@ -1,17 +1,4 @@
-function calculateAge(birthDate) {
-    const today = new Date();
-    const birth = new Date(birthDate);
-
-    let age = today.getFullYear() - birth.getFullYear();
-    const month = today.getMonth() - birth.getMonth();
-
-    if (month < 0 || (month === 0 && today.getDate() < birth.getDate()))
-        age--;
-
-    return age;
-}
-
-const age = calculateAge('2001-05-18');
+import defaults from "$lib/translations/defaults";
 
 export default {
 	name: "PT",
@@ -20,12 +7,12 @@ export default {
 		madeWith: "Este site foi feito com:",
 		curriculum: "Currículo",
 		contacts: "Contatos",
-
+		
 		intro: {
 			declaration: {
 				title: "DECLARAÇÃO",
 				subjects: [{
-					content: `Tenho ${age} anos, sou da Bahia, Brasil, e procuro uma oportunidade de aprendizado e crescimento profissional.`
+					content: `Tenho ${defaults.age} anos, sou da Bahia, Brasil, e procuro uma oportunidade de aprendizado e crescimento profissional.`
 				}]
 			},
 			differential: {
@@ -113,43 +100,43 @@ export default {
 					title: "Projetos Pessoais",
 					type: "HOBBY",
 					time: "PERIODICAMENTE",
-					content: `Projetos no <a target="_blank" href="https://github.com/NaN-NaN-sempai">Github</a> e no site pessoal: <a target="_blank" href="https://luishenrique.site/pt/">luishenrique.site</a>.`,
+					content: `Projetos no ${defaults.link("Github", "https://github.com/NaN-NaN-sempai")} e no site pessoal: ${defaults.link(defaults.site, "https://"+defaults.site+"/")}.`,
 				},
 				{
 					title: "PDEF",
 					type: "PROJETO ACADÊMICO",
 					time: "2021",
-					content: `Plotador de Funções: <a target="_blank" href="https://luishenrique.site/PdeF/">luishenrique.site/PdeF</a>`,
+					content: `Plotador de Funções: ${defaults.link(defaults.site+"/PdeF", "https://"+defaults.site+"/PdeF")}.`,
 				},
 				{
 					title: "LiCA App",
 					type: "PROJETO ACADÊMICO",
 					time: "2021",
-					content: `App para exibir a ementa do curso. Disponível no Google Play Store até 14/03/2024. Disponível em: <a target="_blank" href="http://applica.luishenrique.site">applica.luishenrique.site</a>`,
+					content: `App para exibir a ementa do curso. Disponível no Google Play Store até 14/03/2024. Disponível em: ${defaults.link("applica."+defaults.site, "https://applica."+defaults.site)}.`,
 				},
 				{
 					title: "Oficina Sobre Computação",
 					type: "ESTÁGIO",
 					time: "2022",
-					content: `Oficina de "Introdução à Computação". Info: <a target="_blank" href="https://oficina-introducao-computacao.vercel.app/">oficina-introducao-computacao.vercel.app</a>`,
+					content: `Oficina de "Introdução à Computação". Info: ${defaults.link("oficina-introducao-computacao.vercel.app", "https://oficina-introducao-computacao.vercel.app/")}.`,
 				},
 				{
 					title: "Artigo",
 					type: "PROJETO ACADÊMICO",
 					time: "2022",
-					content: `Artigo publicado no Conedu sobre segurança da informação. PDF disponível em: <a target="_black" href="https://editorarealize.com.br/editora/anais/conedu/2021/TRABALHO_EV150_MD1_SA119_ID1208_22092021174849.pdf">editorarealize.com</a>`,
+					content: `Artigo publicado no Conedu sobre segurança da informação. PDF disponível em: ${defaults.link("editorarealize.com", "https://editorarealize.com.br/editora/anais/conedu/2021/TRABALHO_EV150_MD1_SA119_ID1208_22092021174849.pdf")}.`,
 				},
 				{
 					title: "Windows App Folder",
 					type: "HOBBY",
 					time: "2023",
-					content: `App para organizar pastas. Repositorio no  <a target="_blank" href="https://github.com/NaN-NaN-sempai/Windows-App-Folder">GitHub</a>`,
+					content: `App para organizar pastas. Repositorio no ${defaults.link("Github", "https://github.com/NaN-NaN-sempai/Windows-App-Folder")}.`,
 				},
 				{
 					title: "UseBase",
 					type: "HOBBY",
 					time: "2023",
-					content: `Biblioteca JavaScript para codificação de números. <a target="_black" href="https://www.npmjs.com/package/usebase">npmjs.com/package/usebase</a>`,
+					content: `Biblioteca JavaScript para codificação de números. ${defaults.link("npmjs.com/package/usebase", "https://www.npmjs.com/package/usebase")}.`,
 				},
 			]
 		},
@@ -160,7 +147,7 @@ export default {
 					title: "MPJS",
 					type: "Projeto pessoal",
 					time: "2023 / EM DESENVOLVIMENTO",
-					content: `Plotador gráfico avançado: <a target="_blank" href="https://luishenrique.site/MPJS/">luishenrique.site/MPJS</a>`,
+					content: `Plotador gráfico avançado: ${defaults.link(defaults.site+"/MPJS", "https://"+defaults.site+"/MPJS")}.`,
 				}
 			]
 		},

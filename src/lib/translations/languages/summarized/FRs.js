@@ -1,17 +1,4 @@
-function calculateAge(birthDate) {
-    const today = new Date();
-    const birth = new Date(birthDate);
-
-    let age = today.getFullYear() - birth.getFullYear();
-    const month = today.getMonth() - birth.getMonth();
-
-    if (month < 0 || (month === 0 && today.getDate() < birth.getDate()))
-        age--;
-
-    return age;
-}
-
-const age = calculateAge('2001-05-18');
+import defaults from "$lib/translations/defaults";
 
 export default {
     name: "FR",
@@ -24,7 +11,7 @@ export default {
             declaration: {
                 title: "DÉCLARATION PROFESSIONNELLE",
                 subjects: [{
-                    content: `Je suis de Bahia, Brésil, j'ai ${age} ans, et je cherche une opportunité professionnelle pour grandir. Je suis rapide à apprendre, créatif, adaptable, et enthousiaste à l'idée de relever de nouveaux défis.`
+                    content: `Je suis de Bahia, Brésil, j'ai ${defaults.age} ans, et je cherche une opportunité professionnelle pour grandir. Je suis rapide à apprendre, créatif, adaptable, et enthousiaste à l'idée de relever de nouveaux défis.`
                 }]
             },
             differential: {
@@ -111,43 +98,43 @@ export default {
                     title: "Projets Personnels",
                     type: "LOISIR",
                     time: "PÉRIODIQUEMENT",
-                    content: "Voir mes projets sur <a target='_black' href='https://github.com/NaN-NaN-sempai'>GitHub</a> ou mon site : <a href='https://luishenrique.site/pt/'>luishenrique.site</a>.",
+                    content: `Voir mes projets sur ${defaults.link("Github", "https://github.com/NaN-NaN-sempai")} ou mon site : ${defaults.link(defaults.site, "https://"+defaults.site+"/")}.`,
                 },
                 {
                     title: "PDEF",
                     type: "PROJET ACADÉMIQUE",
                     time: "2021",
-                    content: "Plateforme de création de graphiques. Voir : <a target='_black' href='https://luishenrique.site/PdeF/'>PDEF</a>",
+                    content: `Plateforme de création de graphiques. Voir : ${defaults.link("PDEF", "https://"+defaults.site+"/PdeF")}.`,
                 },
                 {
                     title: "LiCA App",
                     type: "PROJET ACADÉMIQUE",
                     time: "2021",
-                    content: "Application Android pour le programme de Sciences Agronomiques. Voir : <a target='_black' href='http://applica.luishenrique.site'>LiCA</a>",
+                    content: `Application Android pour le programme de Sciences Agronomiques. Voir : ${defaults.link("LiCA", "https://applica."+defaults.site)}.`,
                 },
                 {
                     title: "Atelier sur l'Informatique",
                     type: "STAGE ACADÉMIQUE",
                     time: "2022",
-                    content: "Atelier en ligne sur l'informatique. Voir : <a target='_black' href='https://oficina-introducao-computacao.vercel.app/'>Atelier</a> (pt-BR)",
+                    content: `Atelier en ligne sur l'informatique. Voir : ${defaults.link("Atelier", "https://oficina-introducao-computacao.vercel.app/")} (pt-BR)`,
                 },
                 {
                     title: "Article Publié",
                     type: "PROJET ACADÉMIQUE",
                     time: "2022",
-                    content: "Article sur la sécurité de l'information. Voir : <a target='_black' href='https://editorarealize.com.br/editora/anais/conedu/2021/TRABALHO_EV150_MD1_SA119_ID1208_22092021174849.pdf'>Article</a> (pt-BR)",
+                    content: `Article sur la sécurité de l'information. Voir : ${defaults.link("Article", "https://editorarealize.com.br/editora/anais/conedu/2021/TRABALHO_EV150_MD1_SA119_ID1208_22092021174849.pdf")} (pt-BR)`,
                 },
                 {
                     title: "Programme pour Windows",
                     type: "LOISIR / BESOIN PERSONNEL",
                     time: "2023",
-                    content: "Application pour organiser des fichiers. Voir : <a target='_black' href='https://github.com/NaN-NaN-sempai/Windows-App-Folder'>App</a>",
+                    content: `Application pour organiser des fichiers. Voir : ${defaults.link("Github Repo", "https://github.com/NaN-NaN-sempai/Windows-App-Folder")}.`,
                 },
                 {
                     title: "UseBase",
                     type: "LOISIR / BESOIN PERSONNEL",
                     time: "2023",
-                    content: "Bibliothèque JavaScript pour l'encodage de nombres. Voir : <a target='_black' href='https://www.npmjs.com/package/usebase'>UseBase</a>",
+                    content: `Bibliothèque JavaScript pour l'encodage de nombres. Voir : ${defaults.link("NPM", "https://www.npmjs.com/package/usebase")}.`,
                 }
             ]
         },
@@ -158,7 +145,7 @@ export default {
                     title: "MPJS",
                     type: "Projet personnel",
                     time: "2023 / EN DÉVELOPPEMENT",
-                    content: "Math Plotter avec interface avancée. Voir : <a target='_black' href='https://luishenrique.site/MPJS/'>MPJS</a>",
+                    content: `Math Plotter avec interface avancée. Voir : ${defaults.link("MPJS", "https://"+defaults.site+"/MPJS")}.`,
                 }
             ]
         },

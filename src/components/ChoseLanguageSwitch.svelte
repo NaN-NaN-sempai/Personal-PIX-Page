@@ -75,23 +75,25 @@
     } 
 
     const dispatch = () => {
-        const translationProxy = (translations, translationsSummarized, fallbackTranslations) => {
+        const translationProxy = (translations, translationsSummarized={}, fallbackTranslations={}, translationsSelected=translations) => {
             return new Proxy(translations, {
                 get(target, key) {
+                    //console.log(key, key in target, key in translationsSummarized, target[key]);
+                    
                     // if its sumerizing and sumerized language exists
                     if (summerizing && translationsSummarized && key in translationsSummarized) {
-                        const summarizedValue = translationsSummarized[key];
+                        const summarizedValue = translationsSummarized[key];                        
                         if (typeof summarizedValue === 'object' && summarizedValue !== null) {
-                            return translationProxy(summarizedValue, {}, fallbackTranslations[key] || {});
+                            return translationProxy(summarizedValue, summarizedValue, fallbackTranslations[key] || {}, translations[key] || {});
                         }
                         return summarizedValue;
                     }
 
                     // if key exists in selected language
-                    if (key in target) {
-                        const value = target[key];
+                    if (key in translationsSelected) {
+                        const value = translationsSelected[key];
                         if (typeof value === 'object' && value !== null) {
-                            return translationProxy(value, translations[key] || {}, fallbackTranslations[key] || {});
+                            return translationProxy(value, translationsSummarized[key] || {}, fallbackTranslations[key] || {}, value);
                         }
                         return value;
                     }
@@ -100,7 +102,7 @@
                     if (key in fallbackTranslations) {
                         const fallbackValue = fallbackTranslations[key];
                         if (typeof fallbackValue === 'object' && fallbackValue !== null) {
-                            return translationProxy(fallbackValue, {}, {});
+                            return translationProxy(fallbackValue, {}, {}, {});
                         }
                         return fallbackValue;
                     }
@@ -109,9 +111,9 @@
         }
 
         let selLang = languages.find(({name}) => name == selectedLanguage) || defaultLanguage;
+        
         let summarizedLang = summarized.find(({name}) => name == selectedLanguage);
         let fallbackLang = translationProxy(selLang, summarizedLang, defaultLanguage);
-        
 
         translations.set(fallbackLang.content);
         
@@ -156,6 +158,8 @@
         });
     });
     
+
+    import Button from "$components/Button.svelte";
 </script>
 
 <div class="switch">
@@ -227,7 +231,7 @@
 
 
     .selectLanguageInput:checked + .switch__label {
-        background-color: #8FB5F5;
+        background: palette.$skyBlue;
         border-color: palette.$highlight;
 
         .text {

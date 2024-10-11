@@ -1,17 +1,5 @@
-function calculateAge(birthDate) {
-    const today = new Date();
-    const birth = new Date(birthDate);
+import defaults from "$lib/translations/defaults";
 
-    let age = today.getFullYear() - birth.getFullYear();
-    const month = today.getMonth() - birth.getMonth();
-
-    if (month < 0 || (month === 0 && today.getDate() < birth.getDate()))
-        age--;
-
-    return age;
-}
-
-const age = calculateAge('2001-05-18');
 export default {
 	name: "RU",
 	level: "🗣️",
@@ -24,7 +12,7 @@ export default {
 			declaration: {
 				title: "ЗАЯВЛЕНИЕ",
 				subjects: [{
-					content: `Мне ${age} лет, я из Баии, Бразилия, и ищу возможность для обучения и профессионального роста.`
+					content: `Мне ${defaults.age} лет, я из Баии, Бразилия, и ищу возможность для обучения и профессионального роста.`
 				}]
 			},
 			differential: {
@@ -112,43 +100,43 @@ export default {
 					title: "Личные проекты",
 					type: "ХОББИ",
 					time: "ПЕРИОДИЧЕСКИ",
-					content: `Проекты на <a target="_blank" href="https://github.com/NaN-NaN-sempai">Github</a> и на личном сайте: <a target="_blank" href="https://luishenrique.site/pt/">luishenrique.site</a>.`,
+					content: `Проекты на ${defaults.link("Github", "https://github.com/NaN-NaN-sempai")} и на личном сайте: ${defaults.link(defaults.site, "https://"+defaults.site+"/")}.`,
 				},
 				{
 					title: "PDEF",
 					type: "АКАДЕМИЧЕСКИЙ ПРОЕКТ",
 					time: "2021",
-					content: `Плоттер функций: <a target="_blank" href="https://luishenrique.site/PdeF/">luishenrique.site/PdeF</a>`,
+					content: `JavaScript платформа для создания графиков. Посетите: ${defaults.link("PDEF", "https://"+defaults.site+"/PdeF")}.`,
 				},
 				{
 					title: "LiCA App",
 					type: "АКАДЕМИЧЕСКИЙ ПРОЕКТ",
 					time: "2021",
-					content: `Приложение для отображения учебного плана курса. Доступно в Google Play Store до 14/03/2024. Доступно по адресу: <a target="_blank" href="http://applica.luishenrique.site">applica.luishenrique.site</a>`,
+					content: `Приложение для отображения учебного плана курса. Доступно в Google Play Store до 14/03/2024. Доступно по адресу: ${defaults.link("LiCA", "https://applica."+defaults.site)}.`,
 				},
 				{
 					title: "Мастерская по вычислениям",
 					type: "СТАЖИРОВКА",
 					time: "2022",
-					content: `Мастерская "Введение в вычисления". Информация: <a target="_blank" href="https://oficina-introducao-computacao.vercel.app/">oficina-introducao-computacao.vercel.app</a>`,
+					content: `Мастерская "Введение в вычисления". Информация: ${defaults.link("Workshop", "https://oficina-introducao-computacao.vercel.app/")} (pt-BR)`,
 				},
 				{
 					title: "Статья",
 					type: "АКАДЕМИЧЕСКИЙ ПРОЕКТ",
 					time: "2022",
-					content: `Статья, опубликованная на Conedu по вопросам информационной безопасности. PDF доступен по адресу: <a target="_black" href="https://editorarealize.com.br/editora/anais/conedu/2021/TRABALHO_EV150_MD1_SA119_ID1208_22092021174849.pdf">editorarealize.com</a>`,
+					content: `Статья, опубликованная на Conedu по вопросам информационной безопасности. PDF доступен по адресу: ${defaults.link("editorarealize.com", "https://editorarealize.com.br/editora/anais/conedu/2021/TRABALHO_EV150_MD1_SA119_ID1208_22092021174849.pdf")} (pt-BR)`,
 				},
 				{
 					title: "Windows App Folder",
 					type: "ХОББИ",
 					time: "2023",
-					content: `Приложение для организации папок. Репозиторий на <a target="_blank" href="https://github.com/NaN-NaN-sempai/Windows-App-Folder">GitHub</a>`,
+					content: `Приложение для организации папок. Репозиторий на ${defaults.link("Github", "https://github.com/NaN-NaN-sempai/Windows-App-Folder")}.`,
 				},
 				{
 					title: "UseBase",
 					type: "ХОББИ",
 					time: "2023",
-					content: `Библиотека JavaScript для кодирования чисел. <a target="_black" href="https://www.npmjs.com/package/usebase">npmjs.com/package/usebase</a>`,
+					content: `Библиотека JavaScript для кодирования чисел. ${defaults.link("NPM", "https://www.npmjs.com/package/usebase")}.`,
 				},
 			]
 		},
@@ -159,7 +147,7 @@ export default {
 					title: "MPJS",
 					type: "Личный проект",
 					time: "2023 / В РАЗРАБОТКЕ",
-					content: `Расширенный графический плоттер: <a target="_blank" href="https://luishenrique.site/MPJS/">luishenrique.site/MPJS</a>`,
+					content: `Расширенный графический плоттер: ${defaults.link("MPJS", "https://"+defaults.site+"/MPJS")}.`,
 				}
 			]
 		},

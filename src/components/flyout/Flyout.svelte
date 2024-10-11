@@ -1,4 +1,6 @@
 <script>
+	import domain from "$lib/domain";
+
     import Panel from "$components/flyout/components/Panel.svelte";
     import Icon from "$components/flyout/components/Icon.svelte";
     import Title from "$components/flyout/components/Title.svelte";
@@ -39,9 +41,9 @@
             </CompoundItem>
         </a>
     
-        <a class="link item" href="https://luishenrique.site/pt" target="_blank">
+        <a class="link item" href={"https://"+domain} target="_blank">
             <CompoundItem icon="Website">
-                luishenrique.site
+                {domain}
             </CompoundItem>
         </a>
 

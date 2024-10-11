@@ -1,30 +1,23 @@
-function calculateAge(birthDate) {
-    const today = new Date();
-    const birth = new Date(birthDate);
-
-    let age = today.getFullYear() - birth.getFullYear();
-    const month = today.getMonth() - birth.getMonth();
-
-    if (month < 0 || (month === 0 && today.getDate() < birth.getDate()))
-        age--;
-
-    return age;
-}
-
-const age = calculateAge('2001-05-18');
+import defaults from "$lib/translations/defaults";
 
 export default {
 	name: "EN",
 	level: "🗣️",
 	content: {
 		madeWith: "This site was made with:",
-        curriculum: "Curriculum",
+		curriculum: "Curriculum",
 		contacts: "Contacts",
+
+		notFound: "The page you tried to access was not found or does not exist.",
+		useLinksToGoHome: "Use one of the links below to access an existing page.",
+		errorInLoading: "Error loading the page. Please try again later.<br><br>Error code:",
+		goHome: "Go back home 🏠",
+		webSite: "Personal website",
 
 		intro: {
 			declaration: {
 				title: "PROFESSIONAL STATEMENT",
-				subjects: [{ content: `I am from Bahia, Brazil, ${age} years old, and seeking a professional opportunity that provides a journey of learning and development. I am flexible, creative, efficient, and easily adapt to new challenges and changes. I am excited to apply my skills and embark on this journey towards professional success!` }]
+				subjects: [{ content: `I am from Bahia, Brazil, ${defaults.age} years old, and seeking a professional opportunity that provides a journey of learning and development. I am flexible, creative, efficient, and easily adapt to new challenges and changes. I am excited to apply my skills and embark on this journey towards professional success!` }]
 			},
 			differential: {
 				title: "DIFFERENTIATORS",
@@ -112,43 +105,43 @@ export default {
 					title: "Personal Projects",
 					type: "HOBBY",
 					time: "PERIODICALLY",
-					content: `In addition to the projects listed here, I have a wide range of projects available on my GitHub profile: <a target="_blank" href="https://github.com/NaN-NaN-sempai">github.com/NaN-NaN-sempai</a> or on my personal website: <a target="_blank" href="https://luishenrique.site/pt/">luishenrique.site</a>. My projects demonstrate my passion for learning and my ability to create innovative solutions through programming.`,
+					content: `In addition to the projects listed here, I have a wide range of projects available on my GitHub profile: ${defaults.link("github.com/NaN-NaN-sempai", "https://github.com/NaN-NaN-sempai")} or on my personal website: ${defaults.link(defaults.site, "https://"+defaults.site+"/")}. My projects demonstrate my passion for learning and my ability to create innovative solutions through programming.`,
 				},
 		/* PDEF */ {
 					title: "PDEF",
 					type: "ACADEMIC PROJECT",
 					time: "2021",
-					content: `Function Plotter (PDEF), a project required during the Graphics Applications course at IF Baiano. PDEF is a platform that allows the creation of graphs using JavaScript. This project has become a valuable tool for visualizing and understanding graphic concepts, as well as being a personal achievement as a programmer. It can be accessed at: <a target="_blank" href="https://luishenrique.site/PdeF/">luishenrique.site/PdeF</a>`,
+					content: `Function Plotter (PDEF), a project required during the Graphics Applications course at IF Baiano. PDEF is a platform that allows the creation of graphs using JavaScript. This project has become a valuable tool for visualizing and understanding graphic concepts, as well as being a personal achievement as a programmer. It can be accessed at: ${defaults.link(defaults.site+"/PdeF", "https://"+defaults.site+"/PdeF")}`,
 				},
 		/* LICA APP */ {
 					title: "LiCA App",
 					type: "ACADEMIC PROJECT",
 					time: "2021",
-					content: `The LiCA App was my first Android application, developed with my colleague Joel Junior as part of the Graphics Applications course at IF Baiano. This app was designed to display the syllabus for the Licentiate Course in Agricultural Sciences and was available on the Google Play Store until 03/14/2024. Available at: <a target="_blank" href="http://applica.luishenrique.site">applica.luishenrique.site</a>`
+					content: `The LiCA App was my first Android application, developed with my colleague Joel Junior as part of the Graphics Applications course at IF Baiano. This app was designed to display the syllabus for the Licentiate Course in Agricultural Sciences and was available on the Google Play Store until 03/14/2024. Available at: ${defaults.link("applica."+defaults.site, "https://applica."+defaults.site)}`
 				},
 		/* OFICINA */ {
 					title: "Workshop on Computing",
 					type: "ACADEMIC INTERNSHIP",
 					time: "2022",
-					content: `In the Stage I course at IF Baiano, my colleague Marcos Santos and I organized an online workshop (due to the COVID-19 pandemic) on "Introduction to Computing", covering topics such as the history of computing, hardware, software, networks, programming, web development, and job opportunities. Some information (in pt-BR) at: <a target="_blank" href="https://oficina-introducao-computacao.vercel.app/">oficina-introducao-computacao.vercel.app</a>`
+					content: `In the Stage I course at IF Baiano, my colleague Marcos Santos and I organized an online workshop (due to the COVID-19 pandemic) on "Introduction to Computing", covering topics such as the history of computing, hardware, software, networks, programming, web development, and job opportunities. Some information (in pt-BR) at: ${defaults.link("oficina-introducao-computacao.vercel.app", "https://oficina-introducao-computacao.vercel.app/")}`
 				},
 		/* ARTIGO */ {
 					title: "Published Article",
 					type: "ACADEMIC PROJECT",
 					time: "2022",
-					content: `I participated in the Institutional Program of Teaching Initiation Scholarships (PIBID) working with physics teacher Damon Ferreira Farias, and along with colleagues, published an article at Conedu about information security in schools. PDF available (in pt-BR) at: <a target="_black" href="https://editorarealize.com.br/editora/anais/conedu/2021/TRABALHO_EV150_MD1_SA119_ID1208_22092021174849.pdf">editorarealize.com</a>`
+					content: `I participated in the Institutional Program of Teaching Initiation Scholarships (PIBID) working with physics teacher Damon Ferreira Farias, and along with colleagues, published an article at Conedu about information security in schools. PDF available (in pt-BR) at: ${defaults.link("editorarealize.com", "https://editorarealize.com.br/editora/anais/conedu/2021/TRABALHO_EV150_MD1_SA119_ID1208_22092021174849.pdf")}`
 				},
 		/* WINDOWS APP FOLDER */ {
 					title: "Computer Program",
 					type: "HOBBY / PERSONAL NEED",
 					time: "2023",
-					content: `The Windows App Folder is a Windows application made with Electron.js that creates custom folders to organize apps or files, inspired by Samsung's app folders on Android. Access: <a target="_blank" href="https://github.com/NaN-NaN-sempai/Windows-App-Folder">github.com/NaN-NaN-sempai/Windows-App-Folder</a>`
+					content: `The Windows App Folder is a Windows application made with Electron.js that creates custom folders to organize apps or files, inspired by Samsung's app folders on Android. Access: ${defaults.link("github.com/NaN-NaN-sempai/Windows-App-Folder", "https://github.com/NaN-NaN-sempai/Windows-App-Folder")}`
 				},
 		/* USEBASE */ {
 					title: "UseBase",
 					type: "HOBBY / PERSONAL NEED",
 					time: "2023",
-					content: `UseBase is a versatile JavaScript library designed to simplify the process of encoding and decoding numbers using various numeric bases. Whether for representing integers in binary, hexadecimal, custom character sets, or even emojis, UseBase offers a flexible solution. Available at <a target="_black" href="https://www.npmjs.com/package/usebase">npmjs.com/package/usebase</a>`
+					content: `UseBase is a versatile JavaScript library designed to simplify the process of encoding and decoding numbers using various numeric bases. Whether for representing integers in binary, hexadecimal, custom character sets, or even emojis, UseBase offers a flexible solution. Available at ${defaults.link("npmjs.com/package/usebase", "https://www.npmjs.com/package/usebase")}`
 				},
 			]
 		},
@@ -159,7 +152,7 @@ export default {
 					title: "MPJS",
 					type: "Personal project",
 					time: "2023 / IN DEVELOPMENT",
-					content: `Math Plotter Javascript (MPJS) is an evolution of PDEF, now with an improved interface incorporating the Monaco Editor and more advanced JavaScript syntax for creating complex graphs. Available at: <a target="_blank" href="https://luishenrique.site/MPJS/">luishenrique.site/MPJS</a>`
+					content: `Math Plotter Javascript (MPJS) is an evolution of PDEF, now with an improved interface incorporating the Monaco Editor and more advanced JavaScript syntax for creating complex graphs. Available at: ${defaults.link(defaults.site+"/MPJS", "https://"+defaults.site+"/MPJS")}`
 				}
 			]
 		},

@@ -56,12 +56,20 @@
 			'developer/Open AI.png'
 		];
 
+		let switchDarkModeList = [
+			"Open AI",
+			"GitHub",
+			"Vercel",
+			"Next JS"
+		]
+
 		for (let item of tools) {
 			const name = item.split('/').pop().replace('.png', '').replace('.svg', '');
 
 			toolsArray.push({
 				name,
-				path: `/assets/imgs/tools/${item}`
+				path: `/assets/imgs/tools/${item}`,
+				darkMode: switchDarkModeList.includes(name)
 			});
 		}
 	}
@@ -73,7 +81,7 @@
 	<Scroller>
 		{#each toolsArray as tool}
 			<div class="imageContainer" data-toolname={tool.name}>
-				<img class="toolImage" src={tool.path} alt={tool.name} />
+				<img class="toolImage" src={tool.path} alt={tool.name} data-darkmode={tool.darkMode} />
 			</div>
 		{/each}
 	</Scroller>
@@ -89,12 +97,26 @@
 	.toolImage {
 		height: 60px;
 
-		filter: drop-shadow(0 10px 2px rgba(0, 0, 0, 0.25));
+		--shadow: drop-shadow(0 10px 2px rgba(0, 0, 0, 0.25));
+		--shadowHover: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.5));
+		filter: var(--shadow);
 
 		transition: filter 0.5s;
 
+		&[data-darkmode='true'] {	
+			filter:
+				palette.$filterInverInDarkMode
+				var(--shadow);
+
+			&:hover {
+				filter:
+					palette.$filterInverInDarkMode
+					var(--shadowHover);
+			}
+		}
+
 		&:hover {
-			filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.5));
+			filter: var(--shadowHover);
 		}
 	}
 	.imageContainer {

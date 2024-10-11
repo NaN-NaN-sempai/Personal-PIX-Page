@@ -1,17 +1,4 @@
-function calculateAge(birthDate) {
-    const today = new Date();
-    const birth = new Date(birthDate);
-
-    let age = today.getFullYear() - birth.getFullYear();
-    const month = today.getMonth() - birth.getMonth();
-
-    if (month < 0 || (month === 0 && today.getDate() < birth.getDate()))
-        age--;
-
-    return age;
-}
-
-const age = calculateAge('2001-05-18');
+import defaults from "$lib/translations/defaults";
 
 export default {
     name: "EN",
@@ -24,7 +11,7 @@ export default {
         intro: {
             declaration: {
                 title: "PROFESSIONAL STATEMENT",
-                subjects: [{ content: `From Bahia, Brazil, ${age} years old. Seeking opportunities for growth. Flexible, creative, and adaptable.` }]
+                subjects: [{ content: `From Bahia, Brazil, ${defaults.age} years old. Seeking opportunities for growth. Flexible, creative, and adaptable.` }]
             },
             differential: {
                 title: "DIFFERENTIATORS",
@@ -109,43 +96,43 @@ export default {
                     title: "Personal Projects",
                     type: "HOBBY",
                     time: "PERIODICALLY",
-                    content: 'Check my <a target="_blank" href="https://github.com/NaN-NaN-sempai">Github</a> and <a target="_blank" href="https://luishenrique.site/pt/">luishenrique.site</a> for more projects.',
+                    content: `Check my ${defaults.link("Github", "https://github.com/NaN-NaN-sempai")} and ${defaults.link(defaults.site, "https://"+defaults.site+"/")} for more projects.`,
                 },
                 {
                     title: "PDEF",
                     type: "ACADEMIC PROJECT",
                     time: "2021",
-                    content: "JavaScript platform for graph creation. Visit: <a href='https://luishenrique.site/PdeF/'>PDEF</a>",
+                    content: `JavaScript platform for graph creation. Visit: ${defaults.link("PDEF", "https://"+defaults.site+"/PdeF")}.`,
                 },
                 {
                     title: "LiCA App",
                     type: "ACADEMIC PROJECT",
                     time: "2021",
-                    content: "Android app for Agricultural Sciences syllabus. Visit: <a href='http://applica.luishenrique.site'>LiCA</a>",
+                    content: `Android app for Agricultural Sciences syllabus. Visit: ${defaults.link("LiCA", "https://applica."+defaults.site)}.`,
                 },
                 {
                     title: "Workshop on Computing",
                     type: "ACADEMIC INTERNSHIP",
                     time: "2022",
-                    content: "Online workshop on computing basics. Details at: <a href='https://oficina-introducao-computacao.vercel.app/'>Workshop</a> (pt-BR)",
+                    content: `Online workshop on computing basics. Details at: ${defaults.link("Workshop", "https://oficina-introducao-computacao.vercel.app/")} (pt-BR)`,
                 },
                 {
                     title: "Published Article",
                     type: "ACADEMIC PROJECT",
                     time: "2022",
-                    content: "Article on info security in schools. PDF at: <a href='https://editorarealize.com.br/editora/anais/conedu/2021/TRABALHO_EV150_MD1_SA119_ID1208_22092021174849.pdf'>Article</a> (pt-BR)",
+                    content: `Article on info security in schools. PDF at: ${defaults.link("editorarealize.com", "https://editorarealize.com.br/editora/anais/conedu/2021/TRABALHO_EV150_MD1_SA119_ID1208_22092021174849.pdf")} (pt-BR)`,
                 },
                 {
                     title: "Computer Program",
                     type: "HOBBY / PERSONAL NEED",
                     time: "2023",
-                    content: "Windows app for organizing files. Visit the <a href='https://github.com/NaN-NaN-sempai/Windows-App-Folder'>Github Repo</a>",
+                    content: `Windows app for organizing files. Visit the ${defaults.link("Github Repo", "https://github.com/NaN-NaN-sempai/Windows-App-Folder")}.`,
                 },
                 {
                     title: "UseBase",
                     type: "HOBBY / PERSONAL NEED",
                     time: "2023",
-                    content: "JavaScript library for encoding numbers. Available at <a href='https://www.npmjs.com/package/usebase'>NPM</a>",
+                    content: `JavaScript library for encoding numbers. Available at ${defaults.link("NPM", "https://www.npmjs.com/package/usebase")}.`,
                 },
             ]
         },
@@ -156,7 +143,7 @@ export default {
                     title: "MPJS",
                     type: "Personal project",
                     time: "2023 / IN DEVELOPMENT",
-                    content: "Math Plotter with advanced features. Visit: <a href='https://luishenrique.site/MPJS/'>MPJS</a>",
+                    content: `Math Plotter with advanced features. Visit: ${defaults.link("MPJS", "https://"+defaults.site+"/MPJS")}.`,
                 }
             ]
         },
