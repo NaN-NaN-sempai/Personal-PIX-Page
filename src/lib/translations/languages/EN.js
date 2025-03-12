@@ -7,12 +7,26 @@ export default {
 		madeWith: "This site was made with:",
 		curriculum: "Curriculum",
 		contacts: "Contacts",
+		
+		httpStatus: {
+			buttons: {
+				goHome: "Go back home 🏠",
+				webSite: "Personal website",
+			},
+			401: {
+				message: "Unauthorized access. You do not have permission to access this page.",
+				goBackText: "Use one of the links below to navigate to an allowed page."
+			},
+			404: {
+				message: "The page you tried to access was not found or does not exist.",
+				goBackText: "Use one of the links below to access an existing page.",
+			},
+			any: {
+				message: "An unexpected error has occurred. Please try again later.<br><br>Error code: ",
+				goBackText: "Use one of the links below to access another page.",
+			}
+		},
 
-		notFound: "The page you tried to access was not found or does not exist.",
-		useLinksToGoHome: "Use one of the links below to access an existing page.",
-		errorInLoading: "Error loading the page. Please try again later.<br><br>Error code:",
-		goHome: "Go back home 🏠",
-		webSite: "Personal website",
 
 		intro: {
 			declaration: {

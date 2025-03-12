@@ -8,11 +8,25 @@ export default {
 		curriculum: "Curriculum Vitae",
 		contacts: "Contacts",
 
-		notFound: "La page que vous avez tenté d'accéder n'a pas été trouvée ou n'existe pas.",
-		useLinksToGoHome: "Utilisez l'un des liens ci-dessous pour accéder à une page existante.",
-		errorInLoading: "Erreur lors du chargement de la page. Veuillez réessayer plus tard.<br><br>Code d'erreur :",
-		goHome: "Retourner à la maison 🏠",
-		webSite: "Site personnel",
+		httpStatus: {
+			buttons: {
+				goHome: "Retour à l'accueil 🏠",
+				webSite: "Site personnel",
+			},
+			401: {
+				message: "Accès non autorisé. Vous n'avez pas la permission d'accéder à cette page.",
+				goBackText: "Utilisez l'un des liens ci-dessous pour naviguer vers une page autorisée."
+			},
+			404: {
+				message: "La page que vous avez essayé d'accéder n'a pas été trouvée ou n'existe pas.",
+				goBackText: "Utilisez l'un des liens ci-dessous pour accéder à une page existante."
+			},
+			any: {
+				message: "Une erreur inattendue s'est produite. Veuillez réessayer plus tard.<br><br>Code d'erreur : ",
+				goBackText: "Utilisez l'un des liens ci-dessous pour accéder à une autre page."
+			}
+		},
+
 
 		intro: {
 			declaration: {
@@ -108,19 +122,19 @@ export default {
 					title: "Projets Personnels",
 					type: "LOISIR",
 					time: "PÉRIODIQUEMENT",
-					content: `En plus des projets listés ici, j'ai une large gamme de projets disponibles sur mon profil GitHub : ${defaults.link("github.com/NaN-NaN-sempai", "https://github.com/NaN-NaN-sempai")} ou sur mon site personnel : ${defaults.link(defaults.site, "https://"+defaults.site+"/")}. Mes projets démontrent ma passion pour l'apprentissage et ma capacité à créer des solutions innovantes grâce à la programmation.`,
+					content: `En plus des projets listés ici, j'ai une large gamme de projets disponibles sur mon profil GitHub : ${defaults.link("github.com/NaN-NaN-sempai", "https://github.com/NaN-NaN-sempai")} ou sur mon site personnel : ${defaults.link(defaults.site, "https://" + defaults.site + "/")}. Mes projets démontrent ma passion pour l'apprentissage et ma capacité à créer des solutions innovantes grâce à la programmation.`,
 				},
         /* PDEF */ {
 					title: "PDEF",
 					type: "PROJET ACADÉMIQUE",
 					time: "2021",
-					content: `Function Plotter (PDEF), un projet requis durant le cours d'Applications Graphiques à l'IF Baiano. PDEF est une plateforme qui permet la création de graphiques en utilisant JavaScript. Ce projet est devenu un outil précieux pour visualiser et comprendre les concepts graphiques, ainsi qu'une réalisation personnelle en tant que programmeur. Il peut être consulté à : ${defaults.link(defaults.site+"/PdeF", "https://"+defaults.site+"/PdeF")}`,
+					content: `Function Plotter (PDEF), un projet requis durant le cours d'Applications Graphiques à l'IF Baiano. PDEF est une plateforme qui permet la création de graphiques en utilisant JavaScript. Ce projet est devenu un outil précieux pour visualiser et comprendre les concepts graphiques, ainsi qu'une réalisation personnelle en tant que programmeur. Il peut être consulté à : ${defaults.link(defaults.site + "/PdeF", "https://" + defaults.site + "/PdeF")}`,
 				},
         /* LICA APP */ {
 					title: "LiCA App",
 					type: "PROJET ACADÉMIQUE",
 					time: "2021",
-					content: `L'App LiCA était ma première application Android, développée avec mon collègue Joel Junior dans le cadre du cours d'Applications Graphiques à l'IF Baiano. Cette application était conçue pour afficher le programme de la Licence en Sciences Agronomiques et était disponible sur le Google Play Store jusqu'au 14/03/2024. Disponible à : ${defaults.link("applica."+defaults.site, "https://applica."+defaults.site)}`
+					content: `L'App LiCA était ma première application Android, développée avec mon collègue Joel Junior dans le cadre du cours d'Applications Graphiques à l'IF Baiano. Cette application était conçue pour afficher le programme de la Licence en Sciences Agronomiques et était disponible sur le Google Play Store jusqu'au 14/03/2024. Disponible à : ${defaults.link("applica." + defaults.site, "https://applica." + defaults.site)}`
 				},
         /* OFICINA */ {
 					title: "Atelier sur l'Informatique",
@@ -155,7 +169,7 @@ export default {
 					title: "MPJS",
 					type: "Projet personnel",
 					time: "2023 / EN DÉVELOPPEMENT",
-					content: `Math Plotter Javascript (MPJS) est une évolution de PDEF, maintenant avec une interface améliorée incorporant l'éditeur Monaco et une syntaxe JavaScript plus avancée pour créer des graphiques complexes. Disponible à : ${defaults.link(defaults.site+"/MPJS", "https://"+defaults.site+"/MPJS")}`
+					content: `Math Plotter Javascript (MPJS) est une évolution de PDEF, maintenant avec une interface améliorée incorporant l'éditeur Monaco et une syntaxe JavaScript plus avancée pour créer des graphiques complexes. Disponible à : ${defaults.link(defaults.site + "/MPJS", "https://" + defaults.site + "/MPJS")}`
 				}
 			]
 		},

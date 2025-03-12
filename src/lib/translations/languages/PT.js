@@ -8,11 +8,24 @@ export default {
 		curriculum: "Currículo",
 		contacts: "Contatos",
 
-		notFound: "A página que você tentou acessar não foi encontrada ou não existe.",
-		useLinksToGoHome: "Utilize um dos links abaixo para acessar uma página existente.",
-		errorInLoading: "Erro ao carregar a página. Tente novamente mais tarde.<br><br>Código de erro:",
-		goHome: "Voltar para casa 🏠",
-		webSite: "Site pessoal",
+		httpStatus: {
+			buttons: {
+				goHome: "Voltar para casa 🏠",
+				webSite: "Site pessoal",
+			},
+			401: {
+				message: "Acesso não autorizado. Você não tem permissão para acessar esta página.",
+				goBackText: "Use um dos links abaixo para navegar para uma página permitida."
+			},
+			404: {
+				message: "A página que você tentou acessar não foi encontrada ou não existe.",
+				goBackText: "Utilize um dos links abaixo para acessar uma página existente."
+			},
+			any: {
+				message: "Ocorreu um erro inesperado. Por favor, tente novamente mais tarde.<br><br>Código de erro: ",
+				goBackText: "Utilize um dos links abaixo para acessar outra página."
+			}
+		},
 
 		intro: {
 			declaration: {

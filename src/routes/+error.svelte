@@ -1,56 +1,101 @@
 <script>
 	import { page } from '$app/stores';
 	import Button from '$components/Button.svelte';
-	import Lost from '$components/character/Lost.svelte';
 	import Footer from '$components/footer/Footer.svelte';
 	import domain from '$lib/domain';
 
-	import translations from '$trad';
-	let texts;
+	let errorStatus = $page.status;
 
-	let message = 'Error message';
+	// Characters
+	import Lost from '$components/character/Lost.svelte';
+	import Guard from '$components/character/Guard.svelte';
+
+	let errorCharRelations = {
+		any: Lost,
+		401: Guard,
+		404: Lost,
+	};
+	let selectedChar =  Lost;
+
+	import translations from '$trad';
+	let texts;	
+
+	let errorTitle = "";
+	let errorText = "";
+
+
+	let setUpError = (texts) => {
+		let errorCode = $page.status + " - " + $page.error.message;
+
+		let error = texts.httpStatus[errorStatus];
+		selectedChar = errorCharRelations[errorStatus] || errorCharRelations.any;
+
+		if(!error) {
+			error = texts.httpStatus.any;
+			errorText = error.message + errorCode + '<br><br>' + error.goBackText;
+
+		} else {
+			errorText = error.message + '<br><br>' + error.goBackText;
+		}
+	};
 
 	translations.subscribe((value) => {
-		texts = value;
+		texts = value;	
+		
+		setUpError(texts);
 	});
+	
+	import { onMount } from 'svelte';
+    onMount(() => {
+        const params = new URLSearchParams(location.hash.substring(1));
+		console.log(params)
+        if(params.get('simulateHttp')){
+            errorStatus = parseInt(params.get('simulateHttp')) || null;
+
+			setUpError(texts);
+        }     
+    });
+	
 </script>
 
 <div class="outer">
 	<div class="inner">
 		<div class="char">
-			<Lost/>
+			<svelte:component this={selectedChar} />
 		</div>
 		<div class="content">
-			<h1 class="title">{$page.status}</h1>
+			<h1 class="title"> {errorStatus} </h1>
 			<div class="splitter" />
 
 			<p class="message">
-				{@html $page.status == 404 ?
-                    texts.notFound +"<br><br>"+texts.useLinksToGoHome :
-                    texts.errorInLoading + "<br>" + $page.error.message + "<br><br>" + texts.useLinksToGoHome }
+				{@html errorText}
 			</p>
+
 
 			<div class="buttons">
 				<div class="homeButton">
 					<Button href="/" type="sky">
-						{texts.goHome}
+						{texts.httpStatus.buttons.goHome}
 					</Button>
 				</div>
 
 				<div class="centralize">
-					<Button href={"https://"+domain}>
-                        {texts.webSite}
-                    </Button>
+					<Button href={'https://' + domain}>
+						{texts.httpStatus.buttons.webSite}
+					</Button>
 					<Button href="https://github.com/NaN-NaN-sempai">
-                        <img class="buttonIcon" src="/assets/imgs/tools/developer/GitHub.png" alt="Github Icon">
-                        Github
-                    </Button>
+						<img
+							class="buttonIcon"
+							src="/assets/imgs/tools/developer/GitHub.png"
+							alt="Github Icon"
+						/>
+						Github
+					</Button>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-
 
 <style lang="scss">
 	@use '$style/_fonts.scss';
@@ -74,14 +119,14 @@
 		gap: 5vw;
 	}
 
-    .char {
-        width: 450px;
-    }
-    .buttonIcon {
-        height: 1.5rem;
-        margin-right: 1rem;
-        filter: palette.$filterInverInDarkMode;
-    }
+	.char {
+		width: 450px;
+	}
+	.buttonIcon {
+		height: 1.5rem;
+		margin-right: 1rem;
+		filter: palette.$filterInverInDarkMode;
+	}
 	.content {
 		display: flex;
 		flex-direction: column;
@@ -92,6 +137,10 @@
 		.title {
 			font-family: sansation;
 			font-size: 5rem;
+
+			.errorTitle {
+				font-size: 2rem;
+			}
 		}
 
 		.splitter {
@@ -123,39 +172,38 @@
 		}
 	}
 
-    
-    @media (max-width: defaults.$mediaMaxWidth) {
-        .outer {
-            margin-top: 20px;
-        }
+	@media (max-width: defaults.$mediaMaxWidth) {
+		.outer {
+			margin-top: 20px;
+		}
 
-        .inner {
-            flex-direction: column-reverse;
-            gap: 20px;
-        }
+		.inner {
+			flex-direction: column-reverse;
+			gap: 20px;
+		}
 
-        .char {
-            width: 70%;
-        }
+		.char {
+			width: 70%;
+		}
 
-        .content {
-            max-width: 100vw;
-            margin: 40px;
+		.content {
+			max-width: 100vw;
+			margin: 40px;
 
-            .title {
-                font-size: 3rem;
-            }
-            .splitter {
-                margin-top: 5px;
-            }
-            .message {
-                margin-top: 15px;
-                font-size: 1.2rem;
-                text-align: center;
-            }
-            .buttons {
-                margin-top: 40px;
-            }
-        }
-    }
+			.title {
+				font-size: 3rem;
+			}
+			.splitter {
+				margin-top: 5px;
+			}
+			.message {
+				margin-top: 15px;
+				font-size: 1.2rem;
+				text-align: center;
+			}
+			.buttons {
+				margin-top: 40px;
+			}
+		}
+	}
 </style>
