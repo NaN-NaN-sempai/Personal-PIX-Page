@@ -30,7 +30,7 @@
 			},
 			{
 				text: year,
-				href: 'https://en.wikipedia.org/wiki/2024'
+				href: 'https://en.wikipedia.org/wiki/' + year
 			}
 		];
 	});

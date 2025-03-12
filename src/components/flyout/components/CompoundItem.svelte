@@ -2,6 +2,7 @@
     import ItemIcon from "./ItemIcon.svelte";
     
     export let icon = "email";
+    export let overrideTitle = icon;
 
     export let plus = false;
     
@@ -45,7 +46,7 @@
     }
 </script>
 
-<div class="wrapper" title={icon} on:click={copyText} aria-hidden>
+<div class="wrapper" title={overrideTitle? overrideTitle: icon} on:click={copyText} aria-hidden>
     <ItemIcon {icon} {plus} />
     <span bind:this={span}>
         {#if copied}
@@ -90,6 +91,10 @@
             color: palette.$highlight;
             margin-left: 10px;
             user-select: text;
+
+            text-overflow: ellipsis;
+            max-width: 158px;
+            overflow: hidden;
 
             div {
                 @include font;

@@ -23,13 +23,16 @@
     <Title>{texts.contacts}:</Title>
     
     <div class="itemList">
-        <a class="link item" href="mailto:luis.h.wrk@gmail.com" target="_blank">
+        <a class="link item"
+        data-title="CONTACT@LUISHENRIQUE.SPACE"
+        href="mailto:contact@luishenrique.space" target="_blank">
             <CompoundItem icon="Email">
-                luis.h.wrk@gmail.com
+                contact@luishenrique.space
             </CompoundItem>
         </a>
         
-        <a class="link item" href="tel:+5574981395580">
+        <a class="link item"
+        href="tel:+5574981395580">
             <CompoundItem icon="Phone">
                 +55 (71) 98883-4482
             </CompoundItem>
@@ -76,6 +79,42 @@
         flex-direction: column;
         align-items: flex-start;
         flex-wrap: nowrap;
+
+        .item {
+            position: relative;
+
+            &::after {
+                content: attr(data-title);
+                position: absolute;
+                top: -22px;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 10;
+
+                background: palette.$secondary;
+                border: 3px solid palette.$highlight;
+                color: palette.$switchTextColor;
+
+                white-space: nowrap;
+                font-size: 0;
+                text-align: center;
+                border-radius: 9999px;
+                padding: 2px 5px;
+                pointer-events: none;
+                filter: blur(3px);
+
+                opacity: 0;
+                overflow: hidden;
+
+                transition: 0.2s;
+            }
+
+            &:hover::after {
+                opacity: 1;
+                font-size: .8rem;
+                filter: blur(0);
+            }
+        }
     }
 
     .lineHeight {
