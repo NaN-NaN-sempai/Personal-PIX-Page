@@ -27,6 +27,10 @@ export default {
 			}
 		},
 
+		noSummarized: {
+			text: "The summarized version is not available for the selected language."
+		},
+
 
 		intro: {
 			declaration: {

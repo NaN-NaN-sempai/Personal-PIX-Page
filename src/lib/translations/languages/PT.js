@@ -27,6 +27,10 @@ export default {
 			}
 		},
 
+		noSummarized: {
+			text: "Versão resumida indisponível para o idioma selecionado."
+		},
+
 		intro: {
 			declaration: {
 				title: "DECLARAÇÃO PROFISSIONAL",

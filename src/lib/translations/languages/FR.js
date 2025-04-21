@@ -27,12 +27,16 @@ export default {
 			}
 		},
 
+		noSummarized: {
+			text: "La version sommaire n'est pas disponible pour la langue choisie."
+		},
+
 
 		intro: {
 			declaration: {
 				title: "DÉCLARATION PROFESSIONNELLE",
 				subjects: [{
-					content: `Je suis a chercher d'un emploi 😊<br> J'apprends vite et je suis créatif.<br><br>(GPT)<br>Je viens de Bahia, au Brésil, j'ai ${defaults.age} ans, et je cherche une opportunité professionnelle qui offre un parcours d'apprentissage et de développement. Je suis flexible, créatif, efficace et m'adapte facilement aux nouveaux défis et aux changements. Je suis enthousiaste à l'idée d'appliquer mes compétences et de commencer ce parcours vers le succès professionnel !`
+					content: `Je viens de Bahia, au Brésil, j'ai ${defaults.age} ans, et je cherche une opportunité professionnelle qui offre un parcours d'apprentissage et de développement. Je suis flexible, créatif, efficace et m'adapte facilement aux nouveaux défis et aux changements. Je suis enthousiaste à l'idée d'appliquer mes compétences et de commencer ce parcours vers le succès professionnel !`
 				}]
 			},
 			differential: {

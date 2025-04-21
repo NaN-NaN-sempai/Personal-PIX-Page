@@ -79,7 +79,7 @@
 
                 {#if item.list}
                     {#each item.content as listItem, index}
-                        <span class="listItem" data-listanim="false" bind:this={animTargetLists[index]} style="--animDelay: {index+1};">
+                        <span class="listItem" data-listanim="false" bind:this={animTargetLists[index]} style="--animDelay: {index+4};">
                             {listItem}
                         </span>
                     {/each}

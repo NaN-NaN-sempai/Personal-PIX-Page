@@ -115,6 +115,8 @@
         let summarizedLang = summarized.find(({name}) => name == selectedLanguage);
         let fallbackLang = translationProxy(selLang, summarizedLang, defaultLanguage);
 
+        if(summarizedLang == undefined && summerizing) popupWarn.show(fallbackLang.content.noSummarized.text);
+
         translations.set(fallbackLang.content);
         
         document.title = `Luís Henrique de Almeida | ${fallbackLang.content.curriculum.toUpperCase()} | 2024`;
@@ -160,7 +162,11 @@
     
 
     import Button from "$components/Button.svelte";
+    import PopupWarn from "$components/PopupWarn.svelte";
+    let popupWarn;
 </script>
+
+<PopupWarn bind:this={popupWarn}/>
 
 <div class="switch">
     {#each languages as language}

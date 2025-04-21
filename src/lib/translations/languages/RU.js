@@ -27,6 +27,9 @@ export default {
 			}
 		},
 
+		noSummarized: {
+			text: "Сводная версия недоступна для выбранного языка."
+		},
 
 
 		intro: {
