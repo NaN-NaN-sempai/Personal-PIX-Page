@@ -82,37 +82,39 @@
 
         .item {
             position: relative;
+            
+            &[data-title] {
+                &::after {
+                    content: attr(data-title);
+                    position: absolute;
+                    top: -22px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    z-index: 10;
 
-            &::after {
-                content: attr(data-title);
-                position: absolute;
-                top: -22px;
-                left: 50%;
-                transform: translateX(-50%);
-                z-index: 10;
+                    background: palette.$secondary;
+                    border: 3px solid palette.$highlight;
+                    color: palette.$switchTextColor;
 
-                background: palette.$secondary;
-                border: 3px solid palette.$highlight;
-                color: palette.$switchTextColor;
+                    white-space: nowrap;
+                    font-size: 0;
+                    text-align: center;
+                    border-radius: 9999px;
+                    padding: 2px 5px;
+                    pointer-events: none;
+                    filter: blur(3px);
 
-                white-space: nowrap;
-                font-size: 0;
-                text-align: center;
-                border-radius: 9999px;
-                padding: 2px 5px;
-                pointer-events: none;
-                filter: blur(3px);
+                    opacity: 0;
+                    overflow: hidden;
 
-                opacity: 0;
-                overflow: hidden;
+                    transition: 0.2s;
+                }
 
-                transition: 0.2s;
-            }
-
-            &:hover::after {
-                opacity: 1;
-                font-size: .8rem;
-                filter: blur(0);
+                &:hover::after {
+                    opacity: 1;
+                    font-size: .8rem;
+                    filter: blur(0);
+                }
             }
         }
     }
