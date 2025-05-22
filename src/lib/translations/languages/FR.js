@@ -164,6 +164,12 @@ export default {
 					time: "2023",
 					content: `UseBase est une bibliothèque JavaScript polyvalente conçue pour simplifier le processus d'encodage et de décodage des nombres en utilisant différentes bases numériques. Que ce soit pour représenter des entiers en binaire, hexadécimal, ensembles de caractères personnalisés ou même emojis, UseBase offre une solution flexible. Disponible à ${defaults.link("npmjs.com/package/usebase", "https://www.npmjs.com/package/usebase")}`
 				},
+		/* CONSOFY */ {
+					title: "ConsoFy",
+					type: "LOISIR / BESOIN PERSONNEL",
+					time: "2025",
+					content: `ConsoFy est un outil simple pour organiser et styliser la console JavaScript. Le nom ConsoFy a été choisi en raison de sa ressemblance avec le mot "console" utilisé en JavaScript, rendant son utilisation plus intuitive. Accès : ${defaults.link("npmjs.com/package/consofy", "https://www.npmjs.com/package/consofy")}`
+				}
 			]
 		},
 		projectsPlus: {
@@ -174,6 +180,12 @@ export default {
 					type: "Projet personnel",
 					time: "2023 / EN DÉVELOPPEMENT",
 					content: `Math Plotter Javascript (MPJS) est une évolution de PDEF, maintenant avec une interface améliorée incorporant l'éditeur Monaco et une syntaxe JavaScript plus avancée pour créer des graphiques complexes. Disponible à : ${defaults.link(defaults.site + "/MPJS", "https://" + defaults.site + "/MPJS")}`
+				},
+		/* LDP WHATSAPP */ {
+					title: "Ligne de Production avec WhatsApp",
+					type: "Projet Personnel",
+					time: "EN DÉVELOPPEMENT",
+					content: `LDP WhatsApp est un système en cours de développement qui servira à gérer une ligne de production de produits ou de services, avec un chat client via WhatsApp directement dans le système. Projet privé encore en développement.`
 				}
 			]
 		},

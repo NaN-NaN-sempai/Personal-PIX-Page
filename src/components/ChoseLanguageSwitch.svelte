@@ -119,7 +119,7 @@
 
         translations.set(fallbackLang.content);
         
-        document.title = `Luís Henrique de Almeida | ${fallbackLang.content.curriculum.toUpperCase()} | 2024`;
+        document.title = `Luís Henrique de Almeida | ${fallbackLang.content.curriculum.toUpperCase()} | 2025`;
     }
 
     const saveCheck = (element) => {

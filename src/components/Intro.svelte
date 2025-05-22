@@ -18,7 +18,7 @@
     <div class="right">
         <div class="contentHeader">
             <div class="year">
-                <Year> <span class="hidden">{texts.curriculum.toUpperCase()}</span> 2024 </Year>
+                <Year> <span class="hidden">{texts.curriculum.toUpperCase()}</span> 2025 </Year>
             </div>
             <h1 class="title">Luís Henrique de Almeida</h1>
         </div>

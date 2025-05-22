@@ -100,19 +100,19 @@ export default {
           title: "Persoonlijke Projecten",
           type: "HOBBY",
           time: "PERIODIEK",
-          content: `Projecten op ${defaults.link("Github", "https://github.com/NaN-NaN-sempai")} en op mijn persoonlijke website: ${defaults.link(defaults.site, "https://"+defaults.site+"/")}.`
+          content: `Projecten op ${defaults.link("Github", "https://github.com/NaN-NaN-sempai")} en op mijn persoonlijke website: ${defaults.link(defaults.site, "https://" + defaults.site + "/")}.`
         },
         {
           title: "PDEF",
           type: "ACADEMISCH PROJECT",
           time: "2021",
-          content: `Functieplotter: ${defaults.link(defaults.site+"/PdeF", "https://"+defaults.site+"/PdeF")}.`
+          content: `Functieplotter: ${defaults.link(defaults.site + "/PdeF", "https://" + defaults.site + "/PdeF")}.`
         },
         {
           title: "LiCA App",
           type: "ACADEMISCH PROJECT",
           time: "2021",
-          content: `App voor het weergeven van het cursusprogramma. Beschikbaar in de Google Play Store tot 14/03/2024. Beschikbaar op: ${defaults.link("applica."+defaults.site, "https://applica."+defaults.site)}.`
+          content: `App voor het weergeven van het cursusprogramma. Beschikbaar in de Google Play Store tot 14/03/2024. Beschikbaar op: ${defaults.link("applica." + defaults.site, "https://applica." + defaults.site)}.`
         },
         {
           title: "Workshop over Informatica",
@@ -137,7 +137,14 @@ export default {
           type: "HOBBY",
           time: "2023",
           content: `JavaScript bibliotheek voor het coderen van getallen. ${defaults.link("npmjs.com/package/usebase", "https://www.npmjs.com/package/usebase")}.`
+        },
+        {
+          title: "ConsoFy",
+          type: "HOBBY / PERSOONLIJKE BEHOEFTE",
+          time: "2025",
+          content: `ConsoFy organiseert en stijlt de JavaScript-console. Toegang: ${defaults.link("npmjs.com/package/consofy", "https://www.npmjs.com/package/consofy")}`
         }
+
       ]
     },
     projectsPlus: {
@@ -147,8 +154,15 @@ export default {
           title: "MPJS",
           type: "Persoonlijk project",
           time: "2023 / IN ONTWIKKELING",
-          content: `Geavanceerde grafiekplotter: ${defaults.link(defaults.site+"/MPJS", "https://"+defaults.site+"/MPJS")}.`
+          content: `Geavanceerde grafiekplotter: ${defaults.link(defaults.site + "/MPJS", "https://" + defaults.site + "/MPJS")}.`
+        },
+        {
+          title: "Productielijn met WhatsApp",
+          type: "Persoonlijk Project",
+          time: "IN ONTWIKKELING",
+          content: `Systeem in ontwikkeling om productielijnen van producten of diensten te beheren, met geïntegreerde WhatsApp. Privéproject nog in ontwikkeling.`
         }
+
       ]
     },
     works: {

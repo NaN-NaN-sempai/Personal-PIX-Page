@@ -4,8 +4,8 @@ export default {
     name: "FR",
     level: "👶🏻",
     content: {
-		madeWith: "Ce site a été fait avec :",
-		curriculum: "Curriculum Vitae",
+        madeWith: "Ce site a été fait avec :",
+        curriculum: "Curriculum Vitae",
         contacts: "Contacts",
         intro: {
             declaration: {
@@ -21,7 +21,7 @@ export default {
                     content: [
                         "Fluent en anglais",
                         "Notions de français",
-						"Permis de conduire",
+                        "Permis de conduire",
                         "Designer",
                         "Programmeur",
                         "Développement Adobe JSX",
@@ -29,11 +29,11 @@ export default {
                     ]
                 }]
             },
-			characteristics: {
-				title: "CARACTÉRISTIQUES",
-				subjects: [{
-					list: true,
-					content: [
+            characteristics: {
+                title: "CARACTÉRISTIQUES",
+                subjects: [{
+                    list: true,
+                    content: [
                         "Passionné par les défis",
                         "Apprenant rapide",
                         "Polyvalent",
@@ -41,9 +41,9 @@ export default {
                         "Organisé",
                         "Travail en équipe",
                         "Créatif",
-					]
-				}]
-			},
+                    ]
+                }]
+            },
         },
         education: {
             title: "PARCOURS ACADÉMIQUE",
@@ -98,19 +98,19 @@ export default {
                     title: "Projets Personnels",
                     type: "LOISIR",
                     time: "PÉRIODIQUEMENT",
-                    content: `Voir mes projets sur ${defaults.link("Github", "https://github.com/NaN-NaN-sempai")} ou mon site : ${defaults.link(defaults.site, "https://"+defaults.site+"/")}.`,
+                    content: `Voir mes projets sur ${defaults.link("Github", "https://github.com/NaN-NaN-sempai")} ou mon site : ${defaults.link(defaults.site, "https://" + defaults.site + "/")}.`,
                 },
                 {
                     title: "PDEF",
                     type: "PROJET ACADÉMIQUE",
                     time: "2021",
-                    content: `Plateforme de création de graphiques. Voir : ${defaults.link("PDEF", "https://"+defaults.site+"/PdeF")}.`,
+                    content: `Plateforme de création de graphiques. Voir : ${defaults.link("PDEF", "https://" + defaults.site + "/PdeF")}.`,
                 },
                 {
                     title: "LiCA App",
                     type: "PROJET ACADÉMIQUE",
                     time: "2021",
-                    content: `Application Android pour le programme de Sciences Agronomiques. Voir : ${defaults.link("LiCA", "https://applica."+defaults.site)}.`,
+                    content: `Application Android pour le programme de Sciences Agronomiques. Voir : ${defaults.link("LiCA", "https://applica." + defaults.site)}.`,
                 },
                 {
                     title: "Atelier sur l'Informatique",
@@ -135,7 +135,14 @@ export default {
                     type: "LOISIR / BESOIN PERSONNEL",
                     time: "2023",
                     content: `Bibliothèque JavaScript pour l'encodage de nombres. Voir : ${defaults.link("NPM", "https://www.npmjs.com/package/usebase")}.`,
+                },
+                {
+                    title: "ConsoFy",
+                    type: "PASSION / BESOIN PERSONNEL",
+                    time: "2025",
+                    content: `ConsoFy organise et stylise la console JavaScript. Accès : ${defaults.link("npmjs.com/package/consofy", "https://www.npmjs.com/package/consofy")}`
                 }
+
             ]
         },
         projectsPlus: {
@@ -145,8 +152,15 @@ export default {
                     title: "MPJS",
                     type: "Projet personnel",
                     time: "2023 / EN DÉVELOPPEMENT",
-                    content: `Math Plotter avec interface avancée. Voir : ${defaults.link("MPJS", "https://"+defaults.site+"/MPJS")}.`,
+                    content: `Math Plotter avec interface avancée. Voir : ${defaults.link("MPJS", "https://" + defaults.site + "/MPJS")}.`,
+                },
+                {
+                    title: "Ligne de Production avec WhatsApp",
+                    type: "Projet Personnel",
+                    time: "EN DÉVELOPPEMENT",
+                    content: `Système en production pour gérer des lignes de production avec WhatsApp intégré. Projet privé encore en développement.`
                 }
+
             ]
         },
         works: {

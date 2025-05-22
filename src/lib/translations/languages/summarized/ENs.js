@@ -4,7 +4,7 @@ export default {
     name: "EN",
     level: "🗣️",
     content: {
-		madeWith: "This site was made with:",
+        madeWith: "This site was made with:",
         curriculum: "Curriculum",
         contacts: "Contacts",
 
@@ -19,19 +19,19 @@ export default {
                     list: true, content: [
                         "Fluent in English",
                         "Basic French",
-						"Driver's license",
+                        "Driver's license",
                         "Designer",
                         "Programmer",
-						"Experience with Adobe JSX scripts",
+                        "Experience with Adobe JSX scripts",
                         "Experienced in WEB, Mobile and Arduino development",
                     ]
                 }]
             },
-			characteristics: {
-				title: "CHARACTERISTICS",
-				subjects: [{
-					list: true,
-					content: [
+            characteristics: {
+                title: "CHARACTERISTICS",
+                subjects: [{
+                    list: true,
+                    content: [
                         "Passionate about challenges",
                         "Quick learner",
                         "Versatile",
@@ -39,9 +39,9 @@ export default {
                         "Organized",
                         "Team player",
                         "Creative",
-					]
-				}]
-			},
+                    ]
+                }]
+            },
         },
         education: {
             title: "ACADEMIC BACKGROUND",
@@ -96,19 +96,19 @@ export default {
                     title: "Personal Projects",
                     type: "HOBBY",
                     time: "PERIODICALLY",
-                    content: `Check my ${defaults.link("Github", "https://github.com/NaN-NaN-sempai")} and ${defaults.link(defaults.site, "https://"+defaults.site+"/")} for more projects.`,
+                    content: `Check my ${defaults.link("Github", "https://github.com/NaN-NaN-sempai")} and ${defaults.link(defaults.site, "https://" + defaults.site + "/")} for more projects.`,
                 },
                 {
                     title: "PDEF",
                     type: "ACADEMIC PROJECT",
                     time: "2021",
-                    content: `JavaScript platform for graph creation. Visit: ${defaults.link("PDEF", "https://"+defaults.site+"/PdeF")}.`,
+                    content: `JavaScript platform for graph creation. Visit: ${defaults.link("PDEF", "https://" + defaults.site + "/PdeF")}.`,
                 },
                 {
                     title: "LiCA App",
                     type: "ACADEMIC PROJECT",
                     time: "2021",
-                    content: `Android app for Agricultural Sciences syllabus. Visit: ${defaults.link("LiCA", "https://applica."+defaults.site)}.`,
+                    content: `Android app for Agricultural Sciences syllabus. Visit: ${defaults.link("LiCA", "https://applica." + defaults.site)}.`,
                 },
                 {
                     title: "Workshop on Computing",
@@ -134,6 +134,13 @@ export default {
                     time: "2023",
                     content: `JavaScript library for encoding numbers. Available at ${defaults.link("NPM", "https://www.npmjs.com/package/usebase")}.`,
                 },
+                {
+                    title: "ConsoFy",
+                    type: "HOBBY / PERSONAL NEED",
+                    time: "2025",
+                    content: `ConsoFy organizes and styles the JavaScript console. Access: ${defaults.link("npmjs.com/package/consofy", "https://www.npmjs.com/package/consofy")}`
+                }
+
             ]
         },
         projectsPlus: {
@@ -143,8 +150,15 @@ export default {
                     title: "MPJS",
                     type: "Personal project",
                     time: "2023 / IN DEVELOPMENT",
-                    content: `Math Plotter with advanced features. Visit: ${defaults.link("MPJS", "https://"+defaults.site+"/MPJS")}.`,
+                    content: `Math Plotter with advanced features. Visit: ${defaults.link("MPJS", "https://" + defaults.site + "/MPJS")}.`,
+                },
+                {
+                    title: "Production Line with WhatsApp",
+                    type: "Personal Project",
+                    time: "IN DEVELOPMENT",
+                    content: `System in production to manage production lines with integrated WhatsApp. Private project still in development.`
                 }
+
             ]
         },
         works: {

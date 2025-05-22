@@ -7,7 +7,7 @@ export default {
 		madeWith: "Este site foi feito com:",
 		curriculum: "Currículo",
 		contacts: "Contatos",
-		
+
 		intro: {
 			declaration: {
 				title: "DECLARAÇÃO",
@@ -100,19 +100,19 @@ export default {
 					title: "Projetos Pessoais",
 					type: "HOBBY",
 					time: "PERIODICAMENTE",
-					content: `Projetos no ${defaults.link("Github", "https://github.com/NaN-NaN-sempai")} e no site pessoal: ${defaults.link(defaults.site, "https://"+defaults.site+"/")}.`,
+					content: `Projetos no ${defaults.link("Github", "https://github.com/NaN-NaN-sempai")} e no site pessoal: ${defaults.link(defaults.site, "https://" + defaults.site + "/")}.`,
 				},
 				{
 					title: "PDEF",
 					type: "PROJETO ACADÊMICO",
 					time: "2021",
-					content: `Plotador de Funções: ${defaults.link(defaults.site+"/PdeF", "https://"+defaults.site+"/PdeF")}.`,
+					content: `Plotador de Funções: ${defaults.link(defaults.site + "/PdeF", "https://" + defaults.site + "/PdeF")}.`,
 				},
 				{
 					title: "LiCA App",
 					type: "PROJETO ACADÊMICO",
 					time: "2021",
-					content: `App para exibir a ementa do curso. Disponível no Google Play Store até 14/03/2024. Disponível em: ${defaults.link("applica."+defaults.site, "https://applica."+defaults.site)}.`,
+					content: `App para exibir a ementa do curso. Disponível no Google Play Store até 14/03/2024. Disponível em: ${defaults.link("applica." + defaults.site, "https://applica." + defaults.site)}.`,
 				},
 				{
 					title: "Oficina Sobre Computação",
@@ -138,6 +138,13 @@ export default {
 					time: "2023",
 					content: `Biblioteca JavaScript para codificação de números. ${defaults.link("npmjs.com/package/usebase", "https://www.npmjs.com/package/usebase")}.`,
 				},
+				{
+					title: "ConsoFy",
+					type: "HOBBY / NECESSIDADE PESSOAL",
+					time: "2025",
+					content: `ConsoFy organiza e estiliza o console do JavaScript. Acesse: ${defaults.link("npmjs.com/package/consofy", "https://www.npmjs.com/package/consofy")}`
+				}
+
 			]
 		},
 		projectsPlus: {
@@ -147,7 +154,13 @@ export default {
 					title: "MPJS",
 					type: "Projeto pessoal",
 					time: "2023 / EM DESENVOLVIMENTO",
-					content: `Plotador gráfico avançado: ${defaults.link(defaults.site+"/MPJS", "https://"+defaults.site+"/MPJS")}.`,
+					content: `Plotador gráfico avançado: ${defaults.link(defaults.site + "/MPJS", "https://" + defaults.site + "/MPJS")}.`,
+				},
+				{
+					title: "Linha de Produção com WhatsApp",
+					type: "Projeto pessoal",
+					time: "EM DESENVOLVIMENTO",
+					content: `Sistema em produção para gerenciar linhas de produção com  WhatsApp integrado. Projeto privado ainda em desenvolvimento.`
 				}
 			]
 		},

@@ -7,7 +7,7 @@ export default {
 		madeWith: "This site was made with:",
 		curriculum: "Curriculum",
 		contacts: "Contacts",
-		
+
 		httpStatus: {
 			buttons: {
 				goHome: "Go back home 🏠",
@@ -123,19 +123,19 @@ export default {
 					title: "Personal Projects",
 					type: "HOBBY",
 					time: "PERIODICALLY",
-					content: `In addition to the projects listed here, I have a wide range of projects available on my GitHub profile: ${defaults.link("github.com/NaN-NaN-sempai", "https://github.com/NaN-NaN-sempai")} or on my personal website: ${defaults.link(defaults.site, "https://"+defaults.site+"/")}. My projects demonstrate my passion for learning and my ability to create innovative solutions through programming.`,
+					content: `In addition to the projects listed here, I have a wide range of projects available on my GitHub profile: ${defaults.link("github.com/NaN-NaN-sempai", "https://github.com/NaN-NaN-sempai")} or on my personal website: ${defaults.link(defaults.site, "https://" + defaults.site + "/")}. My projects demonstrate my passion for learning and my ability to create innovative solutions through programming.`,
 				},
 		/* PDEF */ {
 					title: "PDEF",
 					type: "ACADEMIC PROJECT",
 					time: "2021",
-					content: `Function Plotter (PDEF), a project required during the Graphics Applications course at IF Baiano. PDEF is a platform that allows the creation of graphs using JavaScript. This project has become a valuable tool for visualizing and understanding graphic concepts, as well as being a personal achievement as a programmer. It can be accessed at: ${defaults.link(defaults.site+"/PdeF", "https://"+defaults.site+"/PdeF")}`,
+					content: `Function Plotter (PDEF), a project required during the Graphics Applications course at IF Baiano. PDEF is a platform that allows the creation of graphs using JavaScript. This project has become a valuable tool for visualizing and understanding graphic concepts, as well as being a personal achievement as a programmer. It can be accessed at: ${defaults.link(defaults.site + "/PdeF", "https://" + defaults.site + "/PdeF")}`,
 				},
 		/* LICA APP */ {
 					title: "LiCA App",
 					type: "ACADEMIC PROJECT",
 					time: "2021",
-					content: `The LiCA App was my first Android application, developed with my colleague Joel Junior as part of the Graphics Applications course at IF Baiano. This app was designed to display the syllabus for the Licentiate Course in Agricultural Sciences and was available on the Google Play Store until 03/14/2024. Available at: ${defaults.link("applica."+defaults.site, "https://applica."+defaults.site)}`
+					content: `The LiCA App was my first Android application, developed with my colleague Joel Junior as part of the Graphics Applications course at IF Baiano. This app was designed to display the syllabus for the Licentiate Course in Agricultural Sciences and was available on the Google Play Store until 03/14/2024. Available at: ${defaults.link("applica." + defaults.site, "https://applica." + defaults.site)}`
 				},
 		/* OFICINA */ {
 					title: "Workshop on Computing",
@@ -161,6 +161,12 @@ export default {
 					time: "2023",
 					content: `UseBase is a versatile JavaScript library designed to simplify the process of encoding and decoding numbers using various numeric bases. Whether for representing integers in binary, hexadecimal, custom character sets, or even emojis, UseBase offers a flexible solution. Available at ${defaults.link("npmjs.com/package/usebase", "https://www.npmjs.com/package/usebase")}`
 				},
+		/* CONSOFY */ {
+					title: "ConsoFy",
+					type: "HOBBY / PERSONAL NEED",
+					time: "2025",
+					content: `ConsoFy is a simple tool to organize and style the JavaScript console. The name ConsoFy was chosen due to its similarity to the word "console" used in JavaScript, making its usage more intuitive. Access: ${defaults.link("npmjs.com/package/consofy", "https://www.npmjs.com/package/consofy")}`
+				}
 			]
 		},
 		projectsPlus: {
@@ -170,7 +176,13 @@ export default {
 					title: "MPJS",
 					type: "Personal project",
 					time: "2023 / IN DEVELOPMENT",
-					content: `Math Plotter Javascript (MPJS) is an evolution of PDEF, now with an improved interface incorporating the Monaco Editor and more advanced JavaScript syntax for creating complex graphs. Available at: ${defaults.link(defaults.site+"/MPJS", "https://"+defaults.site+"/MPJS")}`
+					content: `Math Plotter Javascript (MPJS) is an evolution of PDEF, now with an improved interface incorporating the Monaco Editor and more advanced JavaScript syntax for creating complex graphs. Available at: ${defaults.link(defaults.site + "/MPJS", "https://" + defaults.site + "/MPJS")}`
+				},
+		/* LDP WHATSAPP */ {
+					title: "Production Line with WhatsApp",
+					type: "Personal Project",
+					time: "IN DEVELOPMENT",
+					content: `LDP WhatsApp is a system in production that will be used to manage a production line of products or services, with customer chat via WhatsApp directly in the system. Private project still in development.`
 				}
 			]
 		},

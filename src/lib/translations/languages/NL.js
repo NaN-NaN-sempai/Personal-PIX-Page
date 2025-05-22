@@ -164,6 +164,12 @@ export default {
                     time: "2023",
                     content: `UseBase is een veelzijdige JavaScript-bibliotheek ontworpen om het coderen en decoderen van getallen in verschillende numerieke systemen te vereenvoudigen. Of het nu gaat om binaire, hexadecimale, aangepaste tekensets of zelfs emoji's: UseBase biedt een flexibele oplossing. Beschikbaar op ${defaults.link("npmjs.com/package/usebase", "https://www.npmjs.com/package/usebase")}.`
                 },
+                {
+                    title: "ConsoFy",
+                    type: "HOBBY / PERSOONLIJKE BEHOEFTE",
+                    time: "2025",
+                    content: `ConsoFy is een eenvoudige tool om de JavaScript-console te organiseren en te stylen. De naam ConsoFy is gekozen vanwege de gelijkenis met het woord "console" dat in JavaScript wordt gebruikt, waardoor het gebruik intuïtiever wordt. Toegang: ${defaults.link("npmjs.com/package/consofy", "https://www.npmjs.com/package/consofy")}`
+                }
             ]
         },
         projectsPlus: {
@@ -174,6 +180,12 @@ export default {
                     type: "Persoonlijk project",
                     time: "2023 / IN ONTWIKKELING",
                     content: "Math Plotter Javascript (MPJS) is een evolutie van PDEF, nu met een verbeterde interface die de Monaco Editor bevat en een geavanceerdere JavaScript-syntaxis voor het maken van complexe grafieken. Beschikbaar op: ${defaults.link(defaults.site + '/MPJS', 'https://' + defaults.site + '/MPJS')}"
+                },
+                {
+                    title: "Productielijn met WhatsApp",
+                    type: "Persoonlijk Project",
+                    time: "IN ONTWIKKELING",
+                    content: `LDP WhatsApp is een systeem in ontwikkeling dat wordt gebruikt om een productielijn van producten of diensten te beheren, met klantchat via WhatsApp direct in het systeem. Privéproject nog in ontwikkeling.`
                 }
             ]
         },

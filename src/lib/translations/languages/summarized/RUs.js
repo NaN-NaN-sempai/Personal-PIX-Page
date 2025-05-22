@@ -100,19 +100,19 @@ export default {
 					title: "Личные проекты",
 					type: "ХОББИ",
 					time: "ПЕРИОДИЧЕСКИ",
-					content: `Проекты на ${defaults.link("Github", "https://github.com/NaN-NaN-sempai")} и на личном сайте: ${defaults.link(defaults.site, "https://"+defaults.site+"/")}.`,
+					content: `Проекты на ${defaults.link("Github", "https://github.com/NaN-NaN-sempai")} и на личном сайте: ${defaults.link(defaults.site, "https://" + defaults.site + "/")}.`,
 				},
 				{
 					title: "PDEF",
 					type: "АКАДЕМИЧЕСКИЙ ПРОЕКТ",
 					time: "2021",
-					content: `JavaScript платформа для создания графиков. Посетите: ${defaults.link("PDEF", "https://"+defaults.site+"/PdeF")}.`,
+					content: `JavaScript платформа для создания графиков. Посетите: ${defaults.link("PDEF", "https://" + defaults.site + "/PdeF")}.`,
 				},
 				{
 					title: "LiCA App",
 					type: "АКАДЕМИЧЕСКИЙ ПРОЕКТ",
 					time: "2021",
-					content: `Приложение для отображения учебного плана курса. Доступно в Google Play Store до 14/03/2024. Доступно по адресу: ${defaults.link("LiCA", "https://applica."+defaults.site)}.`,
+					content: `Приложение для отображения учебного плана курса. Доступно в Google Play Store до 14/03/2024. Доступно по адресу: ${defaults.link("LiCA", "https://applica." + defaults.site)}.`,
 				},
 				{
 					title: "Мастерская по вычислениям",
@@ -138,6 +138,13 @@ export default {
 					time: "2023",
 					content: `Библиотека JavaScript для кодирования чисел. ${defaults.link("NPM", "https://www.npmjs.com/package/usebase")}.`,
 				},
+				{
+					title: "ConsoFy",
+					type: "ХОББИ / ЛИЧНАЯ НЕОБХОДИМОСТЬ",
+					time: "2025",
+					content: `ConsoFy упорядочивает и стилизует консоль JavaScript. Доступ: ${defaults.link("npmjs.com/package/consofy", "https://www.npmjs.com/package/consofy")}`
+				}
+
 			]
 		},
 		projectsPlus: {
@@ -147,8 +154,15 @@ export default {
 					title: "MPJS",
 					type: "Личный проект",
 					time: "2023 / В РАЗРАБОТКЕ",
-					content: `Расширенный графический плоттер: ${defaults.link("MPJS", "https://"+defaults.site+"/MPJS")}.`,
+					content: `Расширенный графический плоттер: ${defaults.link("MPJS", "https://" + defaults.site + "/MPJS")}.`,
+				},
+				{
+					title: "Производственная линия с WhatsApp",
+					type: "Личный проект",
+					time: "В РАЗРАБОТКЕ",
+					content: `Система для управления производственными линиями товаров или услуг с интеграцией WhatsApp. Частный проект, всё ещё в разработке.`
 				}
+
 			]
 		},
 		works: {

@@ -38,7 +38,7 @@
 				<div class="secondFlyout">
 					<SecondFlyout />
 				</div>
-				<Year><span class="hidden">{texts.curriculum.toUpperCase()}</span> 2024</Year>
+				<Year><span class="hidden">{texts.curriculum.toUpperCase()}</span> 2025</Year>
 			</div>
 			<div class="projects">
 				<Projects />
