@@ -11,14 +11,17 @@
 
 <div class="container">
 	<div class="inner">
-		<div class="darkmode centralize">
-			<DarkModeSwitch />
-		</div>
-		<div class="chooselang centralize">
-			<ChooseLanguageSwitch />
-		</div>
-		<div class="summarize centralize">
-			<SummarizeText />
+		<div class="hidden">
+			<div class="darkmode centralize">
+				<DarkModeSwitch />
+			</div>
+			
+			<div class="chooselang centralize">
+				<ChooseLanguageSwitch />
+			</div>
+			<div class="summarize centralize">
+				<SummarizeText />
+			</div>
 		</div>
 	</div>
 	<slot />
@@ -32,6 +35,10 @@
 	@use '$style/_defaults' as defaults;
 	@use '$style/_palette.scss' as palette;
 	@use '$style/_cursors.scss' as cursors;
+
+	.hidden {
+		display: none;
+	}
 
 	@media only screen and (min-width: defaults.$mediaMinWidth) {
 		.outer {

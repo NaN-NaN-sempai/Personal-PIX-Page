@@ -25,12 +25,8 @@
 				href: 'https://' + domain
 			},
 			{
-				text: texts.curriculum,
-				href: 'https://' + domain + '/curriculo'
-			},
-			{
-				text: year,
-				href: 'https://en.wikipedia.org/wiki/' + year
+				text: "PIX",
+				href: 'https://pt.wikipedia.org/wiki/Pix'
 			}
 		];
 	});

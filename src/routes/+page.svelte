@@ -2,12 +2,7 @@
 	import DarkModeSwitch from '$components/DarkModeSwitch.svelte';
 	import ChooseLanguageSwitch from '$components/ChoseLanguageSwitch.svelte';
 	import Intro from '$components/Intro.svelte';
-	import Tools from '$components/Tools.svelte';
-	import Education from '$components/Education.svelte';
-	import SecondFlyout from '$components/flyout/SecondFlyout.svelte';
 	import Year from '$components/Year.svelte';
-	import Projects from '$components/Projects.svelte';
-	import Works from '$components/Works.svelte';
 	import SummarizeText from '$components/SummarizeText.svelte';
 	import Footer from '$components/footer/Footer.svelte';
 
@@ -24,27 +19,6 @@
 		<div class="inner">
 			<div class="intro">
 				<Intro />
-			</div>
-			<div class="tools">
-				<Tools />
-			</div>
-			<div class="education">
-				<Education />
-			</div>
-			<div class="splitter">
-				<div class="name">
-					<span> Luís Henrique de Almeida </span>
-				</div>
-				<div class="secondFlyout">
-					<SecondFlyout />
-				</div>
-				<Year><span class="hidden">{texts.curriculum.toUpperCase()}</span> 2025</Year>
-			</div>
-			<div class="projects">
-				<Projects />
-			</div>
-			<div class="works">
-				<Works />
 			</div>
 		</div>
 	</div>

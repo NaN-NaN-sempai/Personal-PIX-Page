@@ -4,6 +4,8 @@
     import Flyout from "./flyout/Flyout.svelte";
     
     import translations from "$trad"; 
+	import ContentPanel from "../routes/_components/ContentPanel.svelte";
+	import Qrteste from "../routes/_components/qrteste.svelte";
 
     let texts; 
     translations.subscribe(value => {
@@ -23,18 +25,25 @@
             <h1 class="title">Luís Henrique de Almeida</h1>
         </div>
         <div class="content">
-            <Content
-                icon="Declaration"
-                title={texts.intro.declaration.title}
-                content={texts.intro.declaration.subjects}/>
-            <Content
-                icon="Diferentials"    
-                title={texts.intro.differential.title}
-                content={texts.intro.differential.subjects}/>
-            <Content
-                icon="Characteristics"    
-                title={texts.intro.characteristics.title}
-                content={texts.intro.characteristics.subjects}/>
+            <ContentPanel>
+                <Qrteste></Qrteste>
+                deve ter texto explicativo, nome do banco, imagem do banco, (opcional) mostrar o valor
+                <br>
+                <br>
+                pegar banco dos parametros, nu se não tiver parametro
+                <br>
+                <br>
+                encaixar o DarkModeSwitch dentro do ContentPanel
+                <br>
+                <br>
+                mudar titulo da pagina
+                <br>
+                <br>
+                transformar imagem em svg e estilizar
+                <br>
+                <br>
+                enviar email com emailjs
+            </ContentPanel>
         </div>
     </div>
 </div>
@@ -46,7 +55,7 @@
 
 
     .contentHeader {
-        margin-bottom: 50px;
+            -bottom: 50px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -74,6 +83,7 @@
         font-size: 30px;
         text-align: right;
         padding: 25px;
+        padding-top: 0;
 
         max-width: 1940px;
 
