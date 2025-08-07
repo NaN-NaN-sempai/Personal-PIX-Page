@@ -7,6 +7,7 @@ const config = {
 	kit: {
 		adapter: adapter({
 			strict: false,
+			runtime: 'nodejs20.x'
 		}),
 		
 
