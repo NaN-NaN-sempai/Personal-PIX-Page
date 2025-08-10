@@ -8,7 +8,7 @@
 	import { onMount } from 'svelte';
     onMount(() => {
         const params = new URLSearchParams(location.hash.substring(1));
-		console.log(params)
+		//console.log(params)
 
         const value = params.get("v");
 

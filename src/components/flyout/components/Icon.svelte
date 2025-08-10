@@ -6,11 +6,11 @@
 <div class="outer" style="--size: {size}">
     <div class="inner">
         <img class="shadow {flip? "rotate": ""}"
-            src="assets/imgs/icon.png"
+            src="/assets/imgs/icon.png"
             alt="Sombra da imagem anterior">
 
         <img class="img {flip? "rotate": ""}"
-            src="assets/imgs/icon.png"
+            src="/assets/imgs/icon.png"
             alt="Icone com imagem do Dev">
     </div>
 </div>

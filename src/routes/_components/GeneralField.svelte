@@ -1,4 +1,10 @@
-<div>
+<script>
+    export let color = "";
+
+    export let style = ""; 
+</script>
+
+<div class={color} {style}>
     <slot></slot>
 </div>
 
@@ -9,15 +15,16 @@
     div {
         background: palette.$secondary;
         --border: 200px;
-        border-radius: 30px;
-        margin-left: 70px;
-        width: fit-content;
+        border-radius: 10px;
+        border: 5px solid palette.$highlight;
         display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        gap: 10px;
-        box-shadow: -15px 19px 5px 1px rgba(0, 0, 0, 0.25);
+        flex-direction: column;
+        align-items: center;
         padding: 10px;
+
+        &.primary {
+            background: palette.$primary;
+        }
     }
     
     @media only screen and (max-width: defaults.$mediaMaxWidth) { 

@@ -1,30 +1,32 @@
+<script>
+    export let color = "#FFFFFF";
+</script>
+
 <div>
     <slot></slot>
-</div>
+</div> 
 
 <style lang="scss">
     @use "$style/_defaults" as defaults;
     @use "$style/_palette.scss" as palette;
 
     div {
-        background: palette.$secondary;
+        --color: #fff;
+        background: var(--color);
         --border: 200px;
-        border-radius: 30px;
-        margin-left: 70px;
-        width: fit-content;
+        border-radius: 20px;
         display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        gap: 10px;
-        box-shadow: -15px 19px 5px 1px rgba(0, 0, 0, 0.25);
+        gap: 5px;
+        flex-direction: column;
+        align-items: center;
         padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
     }
     
     @media only screen and (max-width: defaults.$mediaMaxWidth) { 
         div {
             background: linear-gradient(to top, palette.$secondary 10%, transparent);
-
-            box-shadow: 0 10px 7px 2px rgba(0, 0, 0, 0.25);
 
             margin: 30px;
             --border: 500px;

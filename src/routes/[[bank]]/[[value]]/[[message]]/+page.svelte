@@ -6,6 +6,9 @@
 	import SummarizeText from '$components/SummarizeText.svelte';
 	import Footer from '$components/footer/Footer.svelte';
 
+	export let data;
+	console.log(data.slugs)
+
 	import translations from '$trad';
 	import { text } from '@sveltejs/kit';
 	let texts;
@@ -18,7 +21,7 @@
 	<div class="outer">
 		<div class="inner">
 			<div class="intro">
-				<Intro />
+				<Intro {data} />
 			</div>
 		</div>
 	</div>
