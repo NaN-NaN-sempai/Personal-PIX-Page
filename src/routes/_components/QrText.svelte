@@ -1,9 +1,14 @@
-<span>
+<script>
+    export let selection = "none";
+</script>
+
+<span style="--selection: {selection}">
     <slot></slot>
 </span>
 
 <style lang="scss">
     span {
+        user-select: var(--selection);
         max-width: 100%;       /* altura máxima */
         overflow: hidden;      /* esconde o excesso */
         text-overflow: ellipsis; /* adiciona "..." */

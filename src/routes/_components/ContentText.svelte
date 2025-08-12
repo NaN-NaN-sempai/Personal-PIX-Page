@@ -1,4 +1,8 @@
-<p>
+<script>
+    export let style = ""
+</script>
+
+<p {style}>
     <slot></slot>
 </p>
 

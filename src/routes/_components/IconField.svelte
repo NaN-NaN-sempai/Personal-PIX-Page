@@ -5,6 +5,8 @@
     
     export let icon = "";
     export let bg = "transparent";
+
+    export let selection = "none";
 </script>
 
 
@@ -23,7 +25,7 @@
         <GeneralField>
             <div class="text">
                 <ContentText>
-                    <QrText>
+                    <QrText {selection}>
                         <slot></slot>
                     </QrText>
                 </ContentText>

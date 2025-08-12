@@ -14,6 +14,7 @@
         text-align: center;
         text-wrap: nowrap;
         font-size: 1.7rem;
+        user-select: none;
 
         --border: 200px;
 

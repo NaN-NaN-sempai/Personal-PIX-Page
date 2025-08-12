@@ -25,8 +25,8 @@
 				href: 'https://' + domain
 			},
 			{
-				text: "PIX",
-				href: 'https://pt.wikipedia.org/wiki/Pix'
+				text: "PAY",
+				href: 'https://en.wikipedia.org/wiki/Pay'
 			}
 		];
 	});

@@ -17,72 +17,73 @@
 	import ContentBanner from "../routes/_components/ContentBanner.svelte";
 	import ContentValue from "../routes/_components/ContentValue.svelte";
 	import IconField from "../routes/_components/IconField.svelte";
+	import { goto } from "$app/navigation";
+	import { page } from "$app/stores";
+	import { onMount } from "svelte";
+	import buildPixPayload from "$lib/buildPix";
 
     let texts; 
     translations.subscribe(value => {
         texts = value;
     });
 
-
-
-
+	$: method = $page.params.method;
 
     export let data;
-    const {slugs} = data;
+    const {slugs, paymentData} = data;
+    let currentHash = {};
 
 
-    const defaultOwnerCpf = {
-        name: "Luís Henrique de Almeida",
-        icon: "/assets/imgs/icon.png",
-        bg: "linear-gradient(to right, #EA7243, #E0881D)",
-        type: "cpf",
-        code: "***.445.865-**"
+    let list =  Object.entries(paymentData).map(e => {
+        let item = e[1];
+        item.key = e[0];
+
+        return item;
+    });
+
+    let pixQR = "";
+	$: selected = method && paymentData ? paymentData[method] : null;
+    $: if(selected != undefined) {
+        if(selected.type == "pix") {
+            const obj = {
+                ...selected.pixData,
+                value: isNaN(slugs.value)? null: slugs.value,
+                message: currentHash.message,
+                // message comes from hash
+            }
+            pixQR = buildPixPayload(obj);
+        }
     }
 
-    const defaultOwnerCnpj = {
-        ...defaultOwnerCpf,
-        type: "cnpj",
-        code: "not yet implemented"
-    }
 
-    const pix = {
-        NU: {
-            name: "Nu Pagamentos S.A.",
-            pixKey: "07bf70ca-4516-4fda-9e9b-0b39c56dadbe",
-            icon: "/assets/payments/banks/NU.png",
-            owner: defaultOwnerCpf,
-        },
-        BB: {
-            name: "Banco do Brasil - checar",
-            pixKey: "37895364-1c0e-410f-9958-9ba45960a586",
-            owner: defaultOwnerCpf,
-            icon: "/assets/payments/banks/BB.png",
-        },
-        SF: {
-            name: "Banco Sofisa - checar",
-            pixKey: "9b0ec5fd-2d80-40e0-8cdc-53cf48548e89",
-            owner: defaultOwnerCpf,
-            icon: "/assets/payments/banks/SF.png",
-        },
-        MP: {
-            name: "Mercado Pago - checar",
-            pixKey: "7972b8ba-250a-4896-b068-da93227b4a25",
-            owner: defaultOwnerCpf,
-            bg: "#00aeec",
-            icon: "/assets/payments/banks/MP.png",
-        },
-    }
+    const gotoObj = (obj, getPath = false) => {
+        let path = `/${paymentData[obj.method] !== undefined ? obj.method : "_"}`; 
+        if (obj.value) path += `/${obj.value}`;
 
-    let selected = pix[slugs.bank ?? "NU"];
+        let currentHash = "";
+        
+        if (typeof window !== 'undefined') {
+            currentHash = window.location.hash || '';
+        }
+        console.log(currentHash);
+        path += currentHash;
 
+        if (getPath) return path;
+
+        goto(path);
+    };
 
     let qrCodeGenerated = "";
     const copyCode = () => {
         console.log("not yet implemented")
     }
 
+    onMount(()=>{
+        const params = new URLSearchParams(location.hash.substring(1));
+        currentHash = Object.fromEntries(params.entries());
 
-    let code = "00020101021126580014br.gov.bcb.pix013607bf70ca-4516-4fda-9e9b-0b39c56dadbe5204000053039865802BR5924LUIS HENRIQUE DE ALMEIDA6012SR DO BONFIM62090505Teste63048EE0";
+        document.querySelectorAll(".doHash").forEach(e=>e.href=gotoObj({...slugs, method: e.dataset.key}, true));
+    })
 </script>
 
 <div class="wrapper">
@@ -98,53 +99,77 @@
         </div>
         <div class="content">
             <ContentPanel>
-                <div class="contentArea">
-                    <ContentArea>
-                        <ContentTitle>código qr</ContentTitle>
-                        <GeneralField>
-                            <ContentQr {code} />
-                        </GeneralField>
-                        <div class="inlineField">
+            {#if selected != undefined}
+                {#if selected.type == "pix"}
+                    
+                    <div class="contentArea">
+                        <ContentArea>
+                            <ContentTitle>código qr</ContentTitle>
                             <GeneralField>
-                                <ContentText> 
-                                    <QrText> {code} </QrText>
-                                </ContentText>
+                                <ContentQr code={pixQR} />
                             </GeneralField>
+                            <div class="inlineField">
+                                <GeneralField>
+                                    <ContentText> 
+                                        <QrText selection="all"> {pixQR} </QrText>
+                                    </ContentText>
+                                </GeneralField>
 
-                            <ContentButton action={copyCode}>
-                                Copiar ©
-                            </ContentButton>
-                        </div>
-                        <div class="inlineField">
-                            <ContentButton type="fit-container">
-                                Ir ao app do Banco ➽
-                            </ContentButton>
-                        </div>
-                    </ContentArea>
-                </div>
+                                <ContentButton action={copyCode}>
+                                    Copiar ©
+                                </ContentButton>
+                            </div>
+                            <div class="inlineField">
+                                <ContentButton type="fit-container">
+                                    Ir ao app do Banco ➽
+                                </ContentButton>
+                            </div>
+                        </ContentArea>
+                    </div>
+                {/if}
 
                 <div class="contentArea">
-                    <ContentBanner>
-                        <PixSvg />
-                    </ContentBanner>                      
+                    {#if selected.type == "pix"}
+                        <ContentBanner>
+                            <PixSvg />
+                        </ContentBanner> 
+                    {/if}                     
                     <ContentArea>
                         <ContentTitle>Informações</ContentTitle>
                         
-                        {#if slugs.value}  
+                        {#if !isNaN(slugs.value)}  
                         <ContentValue name="Valor" value={slugs.value}/>
                         {/if}
 
-                        <IconField icon={selected.icon} bg={selected.bg}>
+                        <IconField icon={selected.icon} bg={selected.bg} selection="all">
                             {selected.name}
                         </IconField>
 
-                        <IconField icon={selected.owner.icon} bg={selected.owner.bg}>
+                        <IconField icon={selected.owner.icon} bg={selected.owner.bg} selection="all">
                             {selected.owner.name}
                         </IconField>
 
-                        <IconField icon={`/assets/payments/${selected.owner.type}.png`}>
+                        <IconField icon={`/assets/payments/${selected.owner.type}.png`} selection="all">
                             {selected.owner.code}
                         </IconField>
+                    </ContentArea>
+                </div>
+                <div class="contentArea">
+                    <ContentArea>
+                        <ContentTitle> Mais </ContentTitle>
+                        {#if currentHash.lm == "1"}
+                            <div class="inlineField">
+                                <GeneralField>
+                                    <ContentText style="text-align: left"> Outras formas de pagamento </ContentText>
+                                </GeneralField>
+
+                                <a class="doHash" data-key="_" on:click|preventDefault={() => gotoObj({...slugs, method: method.key})} href>
+                                    <ContentButton>
+                                        ➽
+                                    </ContentButton>
+                                </a>
+                            </div>
+                        {/if}
                     </ContentArea>
                 </div>
                 <!--
@@ -162,6 +187,23 @@
                 
                 enviar email com emailjs
                 -->
+            {:else}
+                <div class="contentArea">
+                    <ContentArea>
+                        <ContentTitle> Selecione </ContentTitle>
+                        <ContentTitle> Brasil </ContentTitle>
+                        <ContentTitle> PIX </ContentTitle>
+                        
+                        {#each list as method}
+                            <a class="listItem doHash" data-key={method.key} on:click|preventDefault={() => gotoObj({...slugs, method: method.key})} href>    
+                                <IconField icon={method.icon} bg={method.bg}>
+                                    {method.type.toUpperCase()} - {method.name}
+                                </IconField>
+                            </a>
+                        {/each}
+                    </ContentArea>
+                </div>
+            {/if}
             </ContentPanel>
         </div>
     </div>
@@ -172,11 +214,22 @@
     @use "$style/_defaults" as defaults;
     @use "$style/_palette.scss" as palette;
 
+    .doHash {
+        text-decoration: none;
+
+        &:visited {
+            color: inherit; 
+        }
+    }
 
     .content {
         display: flex;
         flex-direction: row;
         justify-content: center;
+
+        .listItem {
+            width: 100%;
+        }
 
         .contentArea {
             max-width: 400px;
