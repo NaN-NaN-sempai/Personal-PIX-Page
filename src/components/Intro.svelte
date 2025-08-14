@@ -187,7 +187,7 @@
 
 
                             <div class="buttonContainer">
-                                <ContentButton action={dmSwitch.switchState}>
+                                <ContentButton action={dmSwitch?.switchState}>
                                     ☀
                                 </ContentButton>
                             </div>
@@ -247,8 +247,8 @@
                 <div class="contentArea">
                     <ContentArea>
                         <ContentTitle> Selecione </ContentTitle>
-                        <ContentTitle> Brasil </ContentTitle>
-                        <ContentTitle> PIX </ContentTitle>
+                        <ContentTitle type="sub"> [svg br & color] - Brasil </ContentTitle>
+                        <ContentTitle type="mini"> [svg pix] - PIX </ContentTitle>
                         
                         {#each list as method}
                             <a class="listItem doHash" data-key={method.key} on:click|preventDefault={() => gotoObj({...slugs, method: method.key})} href>    
