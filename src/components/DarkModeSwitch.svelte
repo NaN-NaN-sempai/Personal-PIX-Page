@@ -1,6 +1,8 @@
 <script>
     import { onMount } from "svelte";
 
+    export let style = "";
+
     let checked = false;
 
     const setupLocalValue = () => {
@@ -62,16 +64,22 @@
 
         checked = !JSON.parse(localStorage.getItem("darkmode"));
 
-        const params = new URLSearchParams(location.hash.substring(1));
+        const params = new URLSearchParams(location.search.substring(1));
         if(params.get('dm')){
             checked = !(params.get('dm') == "1");
         }
         
         changeIcon(checked);
     });
+
+    export const switchState = () => {
+        checked = !checked;
+
+        saveCheck();
+    }
 </script>
 
-<div class="switch">
+<div class="switch" {style}>
     <input type="checkbox" class="switch__input" id="darkModeSwitch" bind:checked={checked} on:input={saveCheck} on:input={playAnimation}>
     <label class="switch__label" for="darkModeSwitch">
         <span class="switch__indicator {doAnimaiton? "animate": ""}"></span>
@@ -110,8 +118,8 @@
         width: 120px;
         height: 60px;
         background: palette.$secondary;
-        border: 5px solid palette.$iconbg;
-        border-radius: 9999px;
+        border: 7px solid palette.$iconbg;
+        border-radius: 999px;
         cursor: url("$lib/assets/cursor/toDay.png"), auto;
         transition: all 0.4s cubic-bezier(.46,.03,.52,.96);
     }

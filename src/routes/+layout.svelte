@@ -13,7 +13,7 @@
 	<div class="inner">
 		<div class="hidden">
 			<div class="darkmode centralize">
-				<DarkModeSwitch />
+				<!-- <DarkModeSwitch /> -->
 			</div>
 			
 			<div class="chooselang centralize">

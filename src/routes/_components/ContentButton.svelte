@@ -4,9 +4,11 @@
     }
 
     export let type = "";
+
+    export let height = "";
 </script>
 
-<button class="container" on:click={action} style="{type=="fit-container"? "width: 100%;": ""}">
+<button class="container" on:click={action} style="{type=="fit-container"? "width: 100%;": ""}{height?`height: ${height};`:""}">
     <slot></slot>
 </button>
 
@@ -36,21 +38,6 @@
 
         &:hover {
             cursor: pointer;
-        }
-    }
-    
-    @media only screen and (max-width: defaults.$mediaMaxWidth) { 
-        div {
-            background: linear-gradient(to top, palette.$secondary 10%, transparent);
-
-            margin: 30px;
-            --border: 500px;
-            --borderB: 80px;
-            border-radius:
-                var(--border)
-                var(--border)
-                var(--borderB)
-                var(--borderB);
         }
     }
 </style>

@@ -21,6 +21,7 @@
 	import { page } from "$app/stores";
 	import { onMount } from "svelte";
 	import buildPixPayload from "$lib/buildPix";
+	import DarkModeSwitch from "./DarkModeSwitch.svelte";
 
     let texts; 
     translations.subscribe(value => {
@@ -31,7 +32,7 @@
 
     export let data;
     const {slugs, paymentData} = data;
-    let currentHash = {};
+    let searchParams = {};
 
 
     let list =  Object.entries(paymentData).map(e => {
@@ -48,7 +49,7 @@
             const obj = {
                 ...selected.pixData,
                 value: isNaN(slugs.value)? null: slugs.value,
-                message: currentHash.message,
+                message: searchParams.message,
                 // message comes from hash
             }
             pixQR = buildPixPayload(obj);
@@ -60,13 +61,15 @@
         let path = `/${paymentData[obj.method] !== undefined ? obj.method : "_"}`; 
         if (obj.value) path += `/${obj.value}`;
 
-        let currentHash = "";
+        let urlParams = "";
         
         if (typeof window !== 'undefined') {
-            currentHash = window.location.hash || '';
+            let search = window.location.search || '';
+            let hash = window.location.hash || '';
+
+            urlParams += search + hash;
         }
-        console.log(currentHash);
-        path += currentHash;
+        path += urlParams;
 
         if (getPath) return path;
 
@@ -79,11 +82,16 @@
     }
 
     onMount(()=>{
-        const params = new URLSearchParams(location.hash.substring(1));
-        currentHash = Object.fromEntries(params.entries());
+        const params = new URLSearchParams(location.search);
+        searchParams = Object.fromEntries(params.entries());
+        console.log(searchParams);
+
+        console.log(dmSwitch)
 
         document.querySelectorAll(".doHash").forEach(e=>e.href=gotoObj({...slugs, method: e.dataset.key}, true));
-    })
+    });
+
+    let dmSwitch;
 </script>
 
 <div class="wrapper">
@@ -157,19 +165,67 @@
                 <div class="contentArea">
                     <ContentArea>
                         <ContentTitle> Mais </ContentTitle>
-                        {#if currentHash.lm == "1"}
+                        {#if searchParams.lm == "1"}
                             <div class="inlineField">
-                                <GeneralField>
-                                    <ContentText style="text-align: left"> Outras formas de pagamento </ContentText>
+                                <GeneralField style="width: 100%;">
+                                    <ContentText style="text-align: left; width: 100%;"> Outras formas de pagamento </ContentText>
                                 </GeneralField>
 
-                                <a class="doHash" data-key="_" on:click|preventDefault={() => gotoObj({...slugs, method: method.key})} href>
+                                <a class="doHash buttonContainer" data-key="_" on:click|preventDefault={() => gotoObj({...slugs, method: method.key})} href>
                                     <ContentButton>
                                         ➽
                                     </ContentButton>
                                 </a>
                             </div>
                         {/if}
+                        <div class="inlineField">
+                            <GeneralField style="width: 100%;">
+                                <ContentText style="text-align: left; width: 100%;">
+                                    Mudar modo de cor
+                                </ContentText>
+                            </GeneralField>
+
+
+                            <div class="buttonContainer">
+                                <ContentButton action={dmSwitch.switchState}>
+                                    ☀
+                                </ContentButton>
+                            </div>
+                            <div class="dmSwitch" style="display:none">
+				                <DarkModeSwitch bind:this={dmSwitch} style="transform: scale(0.6); margin: -15px -27px -20px -27px; filter: none;" />
+                            </div>
+                        </div>
+                    </ContentArea>
+
+                    <ContentArea>
+                        <div class="inlineField">
+                            <GeneralField style="width: 100%;">
+                                <ContentText style="text-align: left; width: 100%;">
+                                    Compartilhar este link
+                                </ContentText>
+                            </GeneralField>
+
+
+                            <div class="buttonContainer">
+                                <ContentButton type="fit-container">
+                                    ?
+                                </ContentButton>
+                            </div>
+                        </div>
+                        <div class="inlineField">
+                            <GeneralField style="width: 100%;">
+                                <ContentText style="text-align: left; width: 100%;">
+                                    Compartilhar o site
+                                </ContentText>
+                            </GeneralField>
+
+
+                            <div class="buttonContainer">
+                                <ContentButton type="fit-container">
+                                    ?
+                                </ContentButton>
+                            </div>
+                        </div>
                     </ContentArea>
                 </div>
                 <!--
@@ -221,6 +277,11 @@
             color: inherit; 
         }
     }
+    .inlineField .buttonContainer {
+        width: 70px;
+        display: flex;
+        justify-content: stretch;
+    }
 
     .content {
         display: flex;
@@ -229,6 +290,7 @@
 
         .listItem {
             width: 100%;
+            
         }
 
         .contentArea {

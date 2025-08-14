@@ -22,6 +22,7 @@
         padding: 10px;
         width: 100%;
         box-sizing: border-box;
+        
     }
     
     @media only screen and (max-width: defaults.$mediaMaxWidth) { 
